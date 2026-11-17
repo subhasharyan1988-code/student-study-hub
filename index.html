@@ -1,3926 +1,1166 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>🌈 Class 1 Kids Learning</title>
+<meta name="theme-color" content="#10264f">
+<title>FOJI TYPING MASTER PRO</title>
 
 <style>
+:root{
+ --navy:#10264f;
+ --blue:#1769aa;
+ --cyan:#00bcd4;
+ --green:#16a36a;
+ --orange:#f39c12;
+ --red:#e74c3c;
+ --bg:#f1f5fb;
+ --white:#fff;
+ --text:#243247;
+ --muted:#718096;
+}
 *{box-sizing:border-box}
-
 body{
  margin:0;
  font-family:Arial,sans-serif;
- background:linear-gradient(135deg,#fff3a6,#b8f2ff,#ffd6ec);
- color:#222;
+ background:var(--bg);
+ color:var(--text);
 }
-
-header{
- background:linear-gradient(135deg,#ff4d8d,#6c5ce7,#00b894);
+button,select,input,textarea{font:inherit}
+button{cursor:pointer}
+.header{
+ background:linear-gradient(120deg,#10264f,#1769aa,#123c70);
  color:white;
+ padding:19px;
  text-align:center;
- padding:25px 10px;
 }
-
-header h1{margin:0;font-size:30px}
-header p{font-size:18px}
-
-.container{
- width:94%;
- max-width:1100px;
- margin:20px auto;
-}
-
-.home-buttons{
+.header h1{margin:0;font-size:27px}
+.header p{margin:8px 0 0;color:#d8e9ff}
+.topbar{
+ background:#fff;
  display:flex;
- flex-direction:column;
- gap:15px;
-}
-
-.home-buttons button{
- border:0;
- border-radius:20px;
- padding:22px;
- color:white;
- font-size:24px;
- font-weight:bold;
- cursor:pointer;
- box-shadow:0 5px 12px #999;
-}
-
-.btnEnglish{background:linear-gradient(135deg,#ff7675,#e84393)}
-.btnMath{background:linear-gradient(135deg,#0984e3,#00cec9)}
-.btnHindi{background:linear-gradient(135deg,#e17055,#fdcb6e)}
-
-.subject{
- display:none;
- margin-top:20px;
- background:white;
- border-radius:22px;
- padding:18px;
- box-shadow:0 5px 15px #aaa;
-}
-
-.subject.show{display:block}
-
-.subject-title{
- color:white;
- padding:15px;
- text-align:center;
- border-radius:16px;
-}
-
-.englishTitle{background:#e84393}
-.mathTitle{background:#0984e3}
-.hindiTitle{background:#e17055}
-
-.lesson-menu{
- display:flex;
- flex-direction:column;
+ justify-content:space-between;
+ align-items:center;
  gap:10px;
- margin-top:15px;
+ padding:12px 18px;
+ box-shadow:0 2px 8px #0001;
+ flex-wrap:wrap;
 }
-
-.lesson-menu button{
+.brand{font-weight:bold;color:var(--navy)}
+.topbar button{
  border:0;
- background:#f1f2f6;
- padding:16px;
+ background:var(--navy);
+ color:white;
+ padding:10px 15px;
+ border-radius:8px;
+}
+.layout{
+ display:grid;
+ grid-template-columns:255px 1fr;
+ gap:18px;
+ max-width:1450px;
+ margin:18px auto;
+ padding:0 14px;
+}
+.sidebar{
+ background:white;
  border-radius:14px;
- text-align:left;
- font-size:18px;
- font-weight:bold;
- cursor:pointer;
- box-shadow:0 3px 7px #ccc;
-}
-
-.lesson-menu button:hover{
- background:#ffeaa7;
- transform:scale(1.01);
-}
-
-.lesson{
- display:none;
- margin-top:18px;
  padding:15px;
- border-radius:18px;
- background:#fafaff;
- border:3px solid #ffeaa7;
+ box-shadow:0 3px 12px #0001;
+ height:max-content;
 }
-
-.lesson.show{display:block}
-
-.lesson h2{
- text-align:center;
- color:#6c5ce7;
+.sidebar h3{color:var(--navy)}
+.menu-btn{
+ display:block;
+ width:100%;
+ text-align:left;
+ border:0;
+ background:#f0f4fa;
+ padding:12px;
+ margin:6px 0;
+ border-radius:8px;
+ color:#26364e;
+ font-weight:bold;
 }
-
-.picture{
- text-align:center;
- font-size:70px;
- margin:15px;
+.menu-btn.active,.menu-btn:hover{
+ background:var(--navy);
+ color:white;
 }
-
+.main{min-width:0}
+.page{display:none}
+.page.active{display:block}
+.card{
+ background:white;
+ border-radius:14px;
+ padding:18px;
+ margin-bottom:16px;
+ box-shadow:0 3px 12px #0001;
+}
+.card h2,.card h3{margin-top:0;color:var(--navy)}
+.stats{
+ display:grid;
+ grid-template-columns:repeat(4,1fr);
+ gap:12px;
+ margin-bottom:16px;
+}
+.stat{
+ padding:17px;
+ border-radius:13px;
+ background:white;
+ box-shadow:0 3px 10px #0001;
+}
+.stat strong{
+ display:block;
+ font-size:26px;
+ color:var(--blue);
+ margin-top:8px;
+}
+.stat small{color:var(--muted)}
+.welcome{
+ background:linear-gradient(120deg,#10264f,#1769aa);
+ color:white;
+ border-radius:15px;
+ padding:24px;
+ margin-bottom:17px;
+}
+.welcome h2{color:white}
+.welcome p{line-height:1.7}
 .grid{
  display:grid;
  grid-template-columns:repeat(3,1fr);
  gap:12px;
 }
-
-.card{
- background:white;
- padding:14px;
- text-align:center;
- border-radius:15px;
- box-shadow:0 3px 8px #ccc;
- font-size:18px;
-}
-
-.card span{
- display:block;
- font-size:45px;
- margin-bottom:7px;
-}
-
-.example{
- background:#fff3cd;
+.level{
+ border:1px solid #e0e7f0;
+ border-radius:12px;
  padding:15px;
- margin:10px 0;
- border-radius:13px;
- border-left:6px solid #f39c12;
- font-size:18px;
- line-height:1.6;
+ background:#fff;
 }
-
-.number-grid{
- display:grid;
- grid-template-columns:repeat(5,1fr);
- gap:7px;
-}
-
-.number{
- background:white;
- padding:10px 5px;
- text-align:center;
- border-radius:10px;
- box-shadow:0 2px 5px #ccc;
- font-weight:bold;
-}
-
-table{
+.level h3{font-size:16px}
+.level button{
  width:100%;
- border-collapse:collapse;
- margin-top:12px;
-}
-
-td,th{
- border:2px solid #74b9ff;
  padding:10px;
- text-align:center;
-}
-
-th{
- background:#74b9ff;
+ background:var(--blue);
  color:white;
-}
-
-.question{
- background:#eee7ff;
- margin:12px 0;
- padding:16px;
- border-radius:15px;
-}
-
-.answer{
- display:none;
- background:#d7f9e3;
- margin-top:10px;
- padding:12px;
- border-radius:10px;
-}
-
-.answer.show{display:block}
-
-.answerBtn,
-.nextBtn,
-.backBtn{
  border:0;
- border-radius:12px;
- padding:13px 18px;
- color:white;
- font-size:17px;
- cursor:pointer;
+ border-radius:8px;
 }
-
-.answerBtn{background:#00b894}
-.nextBtn{background:#6c5ce7;width:100%;margin-top:12px}
-.backBtn{background:#636e72;width:100%;margin-top:15px}
-
-.quizBox{
+.level p{font-size:13px;color:var(--muted)}
+.tag{
+ display:inline-block;
+ padding:5px 9px;
+ border-radius:20px;
+ background:#e4f1ff;
+ color:#1769aa;
+ font-size:12px;
+ font-weight:bold;
+}
+.primary,.secondary,.success,.danger{
+ border:0;
+ border-radius:9px;
+ padding:12px 17px;
+ color:white;
+ margin:4px;
+}
+.primary{background:var(--blue)}
+.secondary{background:#66758a}
+.success{background:var(--green)}
+.danger{background:var(--red)}
+select,input{
+ border:1px solid #ccd6e3;
+ padding:11px;
+ border-radius:8px;
  background:white;
- padding:18px;
- border-radius:18px;
- box-shadow:0 3px 10px #ccc;
+ max-width:100%;
 }
-
-.quizQuestion{
- font-size:21px;
- font-weight:bold;
- background:#fff3a6;
- padding:18px;
- border-radius:15px;
- margin-bottom:15px;
+.exercise-info{
+ display:grid;
+ grid-template-columns:repeat(4,1fr);
+ gap:10px;
+ margin-bottom:14px;
 }
-
-.option{
- display:block;
- width:100%;
- margin:9px 0;
- padding:14px;
- border:0;
- border-radius:12px;
- background:#dfe6e9;
- font-size:17px;
- cursor:pointer;
- text-align:left;
-}
-
-.option:hover{background:#81ecec}
-
-.result{
- padding:15px;
- margin-top:12px;
- border-radius:12px;
- font-size:18px;
- font-weight:bold;
-}
-
-.correct{background:#c8f7dc}
-.wrong{background:#ffd0d0}
-
-.progress{
+.info-box{
+ background:#edf5ff;
+ padding:13px;
+ border-radius:10px;
  text-align:center;
- font-weight:bold;
- margin-bottom:12px;
 }
-
+.info-box strong{
+ display:block;
+ font-size:23px;
+ color:var(--blue);
+ margin-top:5px;
+}
+.target{
+ background:#f0f5fc;
+ padding:20px;
+ border-radius:12px;
+ font-family:Consolas,monospace;
+ font-size:21px;
+ line-height:1.8;
+ word-break:break-word;
+ min-height:110px;
+ margin:12px 0;
+}
+.target .done{color:#16a36a}
+.target .current{
+ background:#ffdb70;
+ color:#111;
+ border-radius:3px;
+}
+.target .wrong{background:#ffb5b5;color:#a00000}
+#typingInput{
+ width:100%;
+ min-height:130px;
+ resize:vertical;
+ border:2px solid #b8cce5;
+ padding:15px;
+ border-radius:12px;
+ font-family:Consolas,monospace;
+ font-size:20px;
+ outline:none;
+}
+#typingInput:focus{border-color:var(--blue)}
+.keyboard{
+ display:grid;
+ gap:5px;
+ margin-top:15px;
+}
+.keyrow{
+ display:flex;
+ justify-content:center;
+ gap:4px;
+}
+.key{
+ flex:1;
+ max-width:55px;
+ min-width:0;
+ padding:12px 2px;
+ text-align:center;
+ background:#e5eaf1;
+ border-radius:6px;
+ font-weight:bold;
+ font-size:12px;
+ box-shadow:0 2px 2px #bbb;
+}
+.key.active{background:#ffca52;transform:translateY(2px)}
+.key.pressed{background:#9be8bb}
+.key.space{max-width:300px;flex:5}
+.finger-legend{
+ display:flex;
+ flex-wrap:wrap;
+ gap:8px;
+ font-size:12px;
+ margin-top:12px;
+}
+.finger-legend span{padding:7px;border-radius:6px}
+.lesson-text{
+ padding:13px;
+ background:#f4f7fb;
+ border-radius:10px;
+ line-height:1.8;
+}
+.progressbar{
+ height:12px;
+ background:#e5eaf1;
+ border-radius:20px;
+ overflow:hidden;
+ margin:12px 0;
+}
+.progressbar div{
+ height:100%;
+ background:linear-gradient(90deg,#00b894,#0984e3);
+ width:0%;
+}
+.result-box{
+ background:#e8f8ef;
+ border-radius:12px;
+ padding:20px;
+ margin-top:15px;
+}
+.result-box strong{font-size:25px;color:var(--green)}
+.table-wrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse;min-width:400px}
+th,td{padding:11px;border:1px solid #dce4ef;text-align:left}
+th{background:#eaf2fc}
+.hidden{display:none!important}
 footer{
- margin-top:25px;
- background:#2d3436;
+ background:var(--navy);
  color:white;
  text-align:center;
- padding:22px;
+ padding:20px;
+ margin-top:25px;
 }
-
-@media(max-width:700px){
+@media(max-width:850px){
+ .layout{grid-template-columns:1fr}
+ .sidebar{display:block}
+ .sidebar-menu{
+ display:grid;
+ grid-template-columns:repeat(2,1fr);
+ gap:4px;
+ }
+ .stats{grid-template-columns:repeat(2,1fr)}
  .grid{grid-template-columns:repeat(2,1fr)}
- .number-grid{grid-template-columns:repeat(4,1fr)}
 }
-
-@media(max-width:450px){
+@media(max-width:480px){
+ .header h1{font-size:21px}
  .grid{grid-template-columns:1fr}
- .number-grid{grid-template-columns:repeat(4,1fr)}
- header h1{font-size:24px}
+ .exercise-info{grid-template-columns:repeat(2,1fr)}
+ .target{font-size:17px}
+ #typingInput{font-size:17px}
+ .key{font-size:9px;padding:11px 1px}
+ .sidebar-menu{grid-template-columns:1fr 1fr}
 }
 </style>
 </head>
 
 <body>
 
-<header>
-<h1>🌈 Class 1 Kids Learning 🌈</h1>
-<p>📘 English • 🔢 Maths • 📕 Hindi</p>
-<p>सीखो • खेलो • मुस्कुराओ ⭐</p>
+<header class="header">
+ <h1>⌨️ FOJI TYPING MASTER PRO</h1>
+ <p>Professional Typing Learning & Practice Software</p>
+ <p>LEARN • PRACTICE • TEST • IMPROVE</p>
 </header>
 
-<div class="container">
-
-<div class="home-buttons">
-
-<button class="btnEnglish" onclick="openSubject('english')">
-📘 English / अंग्रेज़ी
-</button>
-
-<button class="btnMath" onclick="openSubject('math')">
-🔢 Maths / गणित
-</button>
-
-<button class="btnHindi" onclick="openSubject('hindi')">
-📕 Hindi / हिंदी
-</button>
-
-</div>
-
-
-<!-- ================= ENGLISH ================= -->
-
-<div id="english" class="subject">
-
-<div class="subject-title englishTitle">
-<h2>📘 English / अंग्रेज़ी</h2>
-</div>
-
-<div class="lesson-menu">
-
-<button onclick="openLesson('engAlphabet')">
-🔤 Alphabet / वर्णमाला
-</button>
-
-<button onclick="openLesson('engWords')">
-🧩 Words / शब्द
-</button>
-
-<button onclick="openLesson('engVowels')">
-🅰️ Vowels / स्वर
-</button>
-
-<button onclick="openLesson('engNumbers')">
-🔢 Numbers 1–200
-</button>
-
-<button onclick="openLesson('engColours')">
-🎨 Colours / रंग
-</button>
-
-<button onclick="openLesson('engFruits')">
-🍎 Fruits / फल
-</button>
-
-<button onclick="openLesson('engAnimals')">
-🐘 Animals / जानवर
-</button>
-
-<button onclick="openLesson('engBirds')">
-🐦 Birds / पक्षी
-</button>
-
-<button onclick="openLesson('engFamily')">
-👨‍👩‍👧 Family / परिवार
-</button>
-
-<button onclick="openLesson('engBody')">
-👀 Body Parts / शरीर के अंग
-</button>
-
-<button onclick="openLesson('engDays')">
-📅 Days / सप्ताह
-</button>
-
-<button onclick="openLesson('engMonths')">
-🗓️ Months / महीने
-</button>
-
-<button onclick="openLesson('engSentences')">
-💬 Sentences / वाक्य
-</button>
-
-<button onclick="openLesson('engQuiz')">
-❓ English Quiz – 50 Questions
-</button>
-
-</div>
-
-
-<div id="engAlphabet" class="lesson">
-
-<h2>🔤 Alphabet A–Z</h2>
-
-<div class="grid">
-
-<div class="card"><span>🍎</span>A – Apple<br>सेब</div>
-<div class="card"><span>⚽</span>B – Ball<br>गेंद</div>
-<div class="card"><span>🐱</span>C – Cat<br>बिल्ली</div>
-<div class="card"><span>🐶</span>D – Dog<br>कुत्ता</div>
-<div class="card"><span>🐘</span>E – Elephant<br>हाथी</div>
-<div class="card"><span>🐟</span>F – Fish<br>मछली</div>
-<div class="card"><span>🍇</span>G – Grapes<br>अंगूर</div>
-<div class="card"><span>🏠</span>H – House<br>घर</div>
-<div class="card"><span>🍦</span>I – Ice Cream<br>आइसक्रीम</div>
-<div class="card"><span>🧃</span>J – Juice<br>जूस</div>
-<div class="card"><span>🪁</span>K – Kite<br>पतंग</div>
-<div class="card"><span>🦁</span>L – Lion<br>शेर</div>
-<div class="card"><span>🐒</span>M – Monkey<br>बंदर</div>
-<div class="card"><span>🪺</span>N – Nest<br>घोंसला</div>
-<div class="card"><span>🍊</span>O – Orange<br>संतरा</div>
-<div class="card"><span>🦜</span>P – Parrot<br>तोता</div>
-<div class="card"><span>👑</span>Q – Queen<br>रानी</div>
-<div class="card"><span>🐇</span>R – Rabbit<br>खरगोश</div>
-<div class="card"><span>☀️</span>S – Sun<br>सूरज</div>
-<div class="card"><span>🌳</span>T – Tree<br>पेड़</div>
-<div class="card"><span>☂️</span>U – Umbrella<br>छाता</div>
-<div class="card"><span>🚐</span>V – Van<br>वैन</div>
-<div class="card"><span>⌚</span>W – Watch<br>घड़ी</div>
-<div class="card"><span>🎵</span>X – Xylophone</div>
-<div class="card"><span>🪀</span>Y – Yo-Yo</div>
-<div class="card"><span>🦓</span>Z – Zebra<br>ज़ेब्रा</div>
-
-</div>
-</div>
-
-
-<div id="engWords" class="lesson">
-
-<h2>🧩 Simple Words / सरल शब्द</h2>
-
-<div class="grid">
-
-<div class="card"><span>🐱</span>Cat – बिल्ली</div>
-<div class="card"><span>🐶</span>Dog – कुत्ता</div>
-<div class="card"><span>🐘</span>Elephant – हाथी</div>
-<div class="card"><span>🦁</span>Lion – शेर</div>
-<div class="card"><span>🌞</span>Sun – सूरज</div>
-<div class="card"><span>🌙</span>Moon – चाँद</div>
-<div class="card"><span>🏠</span>House – घर</div>
-<div class="card"><span>📖</span>Book – किताब</div>
-<div class="card"><span>✏️</span>Pencil – पेंसिल</div>
-<div class="card"><span>🌳</span>Tree – पेड़</div>
-<div class="card"><span>💧</span>Water – पानी</div>
-<div class="card"><span>🥛</span>Milk – दूध</div>
-<div class="card"><span>⚽</span>Ball – गेंद</div>
-<div class="card"><span>🚗</span>Car – कार</div>
-<div class="card"><span>🪑</span>Chair – कुर्सी</div>
-<div class="card"><span>🚪</span>Door – दरवाजा</div>
-<div class="card"><span>🛏️</span>Bed – बिस्तर</div>
-<div class="card"><span>🖊️</span>Pen – कलम</div>
-
-</div>
-</div>
-
-
-<div id="engVowels" class="lesson">
-
-<h2>🅰️ Vowels / स्वर</h2>
-
-<div class="picture">A E I O U</div>
-
-<div class="example">
-English में 5 vowels होते हैं — <b>A, E, I, O, U</b>
-</div>
-
-<div class="grid">
-
-<div class="card"><span>🍎</span>A – Apple</div>
-<div class="card"><span>🐘</span>E – Elephant</div>
-<div class="card"><span>🍦</span>I – Ice Cream</div>
-<div class="card"><span>🍊</span>O – Orange</div>
-<div class="card"><span>☂️</span>U – Umbrella</div>
-
-</div>
-</div>
-
-
-<div id="engNumbers" class="lesson">
-
-<h2>🔢 Numbers 1–200</h2>
-
-<div class="picture">1️⃣ 2️⃣ 3️⃣ ... 💯 ... 2️⃣0️⃣0️⃣</div>
-
-<div id="engNumberList" class="number-grid"></div>
-
-</div>
-
-
-<div id="engColours" class="lesson">
-
-<h2>🎨 Colours / रंग</h2>
-
-<div class="grid">
-
-<div class="card"><span>🔴</span>Red – लाल</div>
-<div class="card"><span>🔵</span>Blue – नीला</div>
-<div class="card"><span>🟢</span>Green – हरा</div>
-<div class="card"><span>🟡</span>Yellow – पीला</div>
-<div class="card"><span>🟠</span>Orange – नारंगी</div>
-<div class="card"><span>🟣</span>Purple – बैंगनी</div>
-<div class="card"><span>⚫</span>Black – काला</div>
-<div class="card"><span>⚪</span>White – सफेद</div>
-<div class="card"><span>🩷</span>Pink – गुलाबी</div>
-<div class="card"><span>🟤</span>Brown – भूरा</div>
-<div class="card"><span>🩶</span>Gray – धूसर</div>
-<div class="card"><span>🩵</span>Sky Blue – आसमानी</div>
-<div class="card"><span>💚</span>Lime – हल्का हरा</div>
-<div class="card"><span>🟨</span>Golden – सुनहरा</div>
-<div class="card"><span>🌈</span>Rainbow – इंद्रधनुषी</div>
-
-</div>
-</div>
-
-
-<div id="engFruits" class="lesson">
-
-<h2>🍎 Fruits / फल</h2>
-
-<div class="grid">
-
-<div class="card"><span>🍎</span>Apple – सेब</div>
-<div class="card"><span>🍌</span>Banana – केला</div>
-<div class="card"><span>🥭</span>Mango – आम</div>
-<div class="card"><span>🍊</span>Orange – संतरा</div>
-<div class="card"><span>🍇</span>Grapes – अंगूर</div>
-<div class="card"><span>🍉</span>Watermelon – तरबूज</div>
-<div class="card"><span>🍍</span>Pineapple – अनानास</div>
-<div class="card"><span>🥥</span>Coconut – नारियल</div>
-<div class="card"><span>🍋</span>Lemon – नींबू</div>
-<div class="card"><span>🍐</span>Pear – नाशपाती</div>
-<div class="card"><span>🍓</span>Strawberry – स्ट्रॉबेरी</div>
-<div class="card"><span>🥝</span>Kiwi – कीवी</div>
-<div class="card"><span>🍑</span>Peach – आड़ू</div>
-<div class="card"><span>🍒</span>Cherry – चेरी</div>
-<div class="card"><span>🍈</span>Melon – खरबूजा</div>
-<div class="card"><span>🥭</span>Papaya – पपीता</div>
-<div class="card"><span>🍏</span>Green Apple – हरा सेब</div>
-<div class="card"><span>🫐</span>Blueberry – ब्लूबेरी</div>
-
-</div>
-</div>
-
-
-<div id="engAnimals" class="lesson">
-
-<h2>🐘 Animals / जानवर</h2>
-
-<div class="grid">
-
-<div class="card"><span>🐶</span>Dog – कुत्ता</div>
-<div class="card"><span>🐱</span>Cat – बिल्ली</div>
-<div class="card"><span>🦁</span>Lion – शेर</div>
-<div class="card"><span>🐯</span>Tiger – बाघ</div>
-<div class="card"><span>🐘</span>Elephant – हाथी</div>
-<div class="card"><span>🐒</span>Monkey – बंदर</div>
-<div class="card"><span>🐄</span>Cow – गाय</div>
-<div class="card"><span>🐐</span>Goat – बकरी</div>
-<div class="card"><span>🐎</span>Horse – घोड़ा</div>
-<div class="card"><span>🐪</span>Camel – ऊँट</div>
-<div class="card"><span>🐇</span>Rabbit – खरगोश</div>
-<div class="card"><span>🐻</span>Bear – भालू</div>
-<div class="card"><span>🐘</span>Giraffe – जिराफ</div>
-<div class="card"><span>🦒</span>Giraffe – जिराफ</div>
-<div class="card"><span>🦌</span>Deer – हिरण</div>
-<div class="card"><span>🐘</span>Hippopotamus – दरियाई घोड़ा</div>
-<div class="card"><span>🦊</span>Fox – लोमड़ी</div>
-<div class="card"><span>🐺</span>Wolf – भेड़िया</div>
-<div class="card"><span>🐷</span>Pig – सूअर</div>
-<div class="card"><span>🐑</span>Sheep – भेड़</div>
-
-</div>
-</div>
-
-
-<div id="engBirds" class="lesson">
-
-<h2>🐦 Birds / पक्षी</h2>
-
-<div class="grid">
-
-<div class="card"><span>🦜</span>Parrot – तोता</div>
-<div class="card"><span>🦚</span>Peacock – मोर</div>
-<div class="card"><span>🐦</span>Sparrow – गौरैया</div>
-<div class="card"><span>🕊️</span>Pigeon – कबूतर</div>
-<div class="card"><span>🦉</span>Owl – उल्लू</div>
-<div class="card"><span>🦅</span>Eagle – चील</div>
-<div class="card"><span>🦆</span>Duck – बतख</div>
-<div class="card"><span>🐔</span>Hen – मुर्गी</div>
-<div class="card"><span>🐓</span>Rooster – मुर्गा</div>
-<div class="card"><span>🦢</span>Swan – हंस</div>
-<div class="card"><span>🦩</span>Flamingo – फ्लेमिंगो</div>
-<div class="card"><span>🐧</span>Penguin – पेंगुइन</div>
-
-</div>
-</div>
-
-
-<div id="engFamily" class="lesson">
-
-<h2>👨‍👩‍👧 Family / परिवार</h2>
-
-<div class="grid">
-
-<div class="card"><span>👨</span>Father – पिता</div>
-<div class="card"><span>👩</span>Mother – माता</div>
-<div class="card"><span>👦</span>Brother – भाई</div>
-<div class="card"><span>👧</span>Sister – बहन</div>
-<div class="card"><span>👴</span>Grandfather – दादा/नाना</div>
-<div class="card"><span>👵</span>Grandmother – दादी/नानी</div>
-<div class="card"><span>👶</span>Baby – बच्चा</div>
-<div class="card"><span>👨</span>Uncle – चाचा/मामा</div>
-<div class="card"><span>👩</span>Aunt – चाची/मामी</div>
-<div class="card"><span>👦</span>Cousin – चचेरा/ममेरा भाई</div>
-
-</div>
-</div>
-
-
-<div id="engBody" class="lesson">
-
-<h2>👀 Body Parts / शरीर के अंग</h2>
-
-<div class="grid">
-
-<div class="card"><span>👁️</span>Eye – आँख</div>
-<div class="card"><span>👂</span>Ear – कान</div>
-<div class="card"><span>👃</span>Nose – नाक</div>
-<div class="card"><span>👄</span>Mouth – मुँह</div>
-<div class="card"><span>🦷</span>Teeth – दाँत</div>
-<div class="card"><span>👅</span>Tongue – जीभ</div>
-<div class="card"><span>✋</span>Hand – हाथ</div>
-<div class="card"><span>🦶</span>Foot – पैर</div>
-<div class="card"><span>💪</span>Arm – बाँह</div>
-<div class="card"><span>🦵</span>Leg – टाँग</div>
-<div class="card"><span>💇</span>Hair – बाल</div>
-<div class="card"><span>👤</span>Head – सिर</div>
-
-</div>
-</div>
-
-
-<div id="engDays" class="lesson">
-
-<h2>📅 Days / सप्ताह के दिन</h2>
-
-<div class="grid">
-
-<div class="card">Monday – सोमवार</div>
-<div class="card">Tuesday – मंगलवार</div>
-<div class="card">Wednesday – बुधवार</div>
-<div class="card">Thursday – गुरुवार</div>
-<div class="card">Friday – शुक्रवार</div>
-<div class="card">Saturday – शनिवार</div>
-<div class="card">Sunday – रविवार</div>
-
-</div>
-</div>
-
-
-<div id="engMonths" class="lesson">
-
-<h2>🗓️ Months / महीने</h2>
-
-<div class="grid">
-
-<div class="card">January – जनवरी</div>
-<div class="card">February – फरवरी</div>
-<div class="card">March – मार्च</div>
-<div class="card">April – अप्रैल</div>
-<div class="card">May – मई</div>
-<div class="card">June – जून</div>
-<div class="card">July – जुलाई</div>
-<div class="card">August – अगस्त</div>
-<div class="card">September – सितंबर</div>
-<div class="card">October – अक्टूबर</div>
-<div class="card">November – नवंबर</div>
-<div class="card">December – दिसंबर</div>
-
-</div>
-</div>
-
-
-<div id="engSentences" class="lesson">
-
-<h2>💬 Simple Sentences / सरल वाक्य</h2>
-
-<div class="example">I am a boy. — मैं एक लड़का हूँ।</div>
-<div class="example">I am a girl. — मैं एक लड़की हूँ।</div>
-<div class="example">This is a book. — यह एक किताब है।</div>
-<div class="example">This is my house. — यह मेरा घर है।</div>
-<div class="example">I like mango. — मुझे आम पसंद है।</div>
-<div class="example">The sun is hot. — सूरज गर्म है।</div>
-<div class="example">I go to school. — मैं स्कूल जाता हूँ।</div>
-<div class="example">This is my mother. — यह मेरी माँ हैं।</div>
-<div class="example">I have a ball. — मेरे पास एक गेंद है।</div>
-<div class="example">The dog is black. — कुत्ता काला है।</div>
-
-</div>
-
-
-<div id="engQuiz" class="lesson">
-
-<h2>❓ English Quiz</h2>
-
-<div id="engQuizBox" class="quizBox"></div>
-
-</div>
-
-</div>
-
-
-<!-- ================= MATH ================= -->
-
-<div id="math" class="subject">
-
-<div class="subject-title mathTitle">
-<h2>🔢 Maths / गणित</h2>
-</div>
-
-<div class="lesson-menu">
-
-<button onclick="openLesson('mathCounting')">🔢 Counting 1–200</button>
-<button onclick="openLesson('mathBefore')">⬅️ Before / After / Between</button>
-<button onclick="openLesson('mathAddition')">➕ Addition / जोड़</button>
-<button onclick="openLesson('mathSubtraction')">➖ Subtraction / घटाव</button>
-<button onclick="openLesson('mathShapes')">🔺 Shapes / आकृतियाँ</button>
-<button onclick="openLesson('mathCompare')">⚖️ Greater / Smaller / Equal</button>
-<button onclick="openLesson('mathPlace')">🏠 Ones & Tens / इकाई-दहाई</button>
-<button onclick="openLesson('mathTime')">⏰ Time / समय</button>
-<button onclick="openLesson('mathMoney')">💰 Money / पैसे</button>
-<button onclick="openLesson('mathTables')">✖️ Tables 1–50</button>
-<button onclick="openLesson('mathQuiz')">❓ Maths Quiz – 50 Questions</button>
-
-</div>
-
-
-<div id="mathCounting" class="lesson">
-
-<h2>🔢 Counting 1–200</h2>
-
-<div class="picture">1️⃣ 2️⃣ 3️⃣ 🔢 💯 2️⃣0️⃣0️⃣</div>
-
-<div id="mathNumberList" class="number-grid"></div>
-
-</div>
-
-
-<div id="mathBefore" class="lesson">
-
-<h2>⬅️ Before • After • Between</h2>
-
-<div class="example">5 से पहले / Before 5 = <b>4</b></div>
-<div class="example">5 के बाद / After 5 = <b>6</b></div>
-<div class="example">4 और 6 के बीच / Between 4 and 6 = <b>5</b></div>
-<div class="example">10 से पहले = <b>9</b></div>
-<div class="example">10 के बाद = <b>11</b></div>
-<div class="example">9 और 11 के बीच = <b>10</b></div>
-<div class="example">20 से पहले = <b>19</b></div>
-<div class="example">20 के बाद = <b>21</b></div>
-<div class="example">29 और 31 के बीच = <b>30</b></div>
-<div class="example">49 और 51 के बीच = <b>50</b></div>
-
-</div>
-
-
-<div id="mathAddition" class="lesson">
-
-<h2>➕ Addition / जोड़</h2>
-
-<div class="picture">🍎🍎 + 🍎 = 🍎🍎🍎</div>
-
-<div class="example">1 + 1 = <b>2</b></div>
-<div class="example">2 + 2 = <b>4</b></div>
-<div class="example">3 + 2 = <b>5</b></div>
-<div class="example">4 + 3 = <b>7</b></div>
-<div class="example">5 + 5 = <b>10</b></div>
-<div class="example">6 + 3 = <b>9</b></div>
-<div class="example">7 + 2 = <b>9</b></div>
-<div class="example">8 + 4 = <b>12</b></div>
-<div class="example">9 + 5 = <b>14</b></div>
-<div class="example">10 + 10 = <b>20</b></div>
-<div class="example">12 + 5 = <b>17</b></div>
-<div class="example">15 + 5 = <b>20</b></div>
-<div class="example">20 + 10 = <b>30</b></div>
-<div class="example">25 + 5 = <b>30</b></div>
-<div class="example">30 + 20 = <b>50</b></div>
-
-</div>
-
-
-<div id="mathSubtraction" class="lesson">
-
-<h2>➖ Subtraction / घटाव</h2>
-
-<div class="picture">🍎🍎🍎 − 🍎 = 🍎🍎</div>
-
-<div class="example">5 − 1 = <b>4</b></div>
-<div class="example">6 − 2 = <b>4</b></div>
-<div class="example">7 − 3 = <b>4</b></div>
-<div class="example">8 − 4 = <b>4</b></div>
-<div class="example">10 − 5 = <b>5</b></div>
-<div class="example">10 − 2 = <b>8</b></div>
-<div class="example">12 − 4 = <b>8</b></div>
-<div class="example">15 − 5 = <b>10</b></div>
-<div class="example">20 − 10 = <b>10</b></div>
-<div class="example">25 − 5 = <b>20</b></div>
-<div class="example">30 − 10 = <b>20</b></div>
-<div class="example">40 − 20 = <b>20</b></div>
-
-</div>
-
-
-<div id="mathShapes" class="lesson">
-
-<h2>🔺 Shapes / आकृतियाँ</h2>
-
-<div class="grid">
-
-<div class="card"><span>🔵</span>Circle – वृत्त</div>
-<div class="card"><span>🟦</span>Square – वर्ग</div>
-<div class="card"><span>🔺</span>Triangle – त्रिभुज</div>
-<div class="card"><span>▭</span>Rectangle – आयत</div>
-<div class="card"><span>⭐</span>Star – तारा</div>
-<div class="card"><span>❤️</span>Heart – दिल</div>
-<div class="card"><span>⬭</span>Oval – अंडाकार</div>
-<div class="card"><span>♦️</span>Diamond – हीरा</div>
-
-</div>
-
-<div class="example">
-🔵 Circle के कोई कोने नहीं होते।
-<br>
-🔺 Triangle के 3 sides होते हैं।
-<br>
-🟦 Square की 4 बराबर sides होती हैं।
-<br>
-▭ Rectangle की 4 sides होती हैं।
-</div>
-
-</div>
-
-
-<div id="mathCompare" class="lesson">
-
-<h2>⚖️ Greater • Smaller • Equal</h2>
-
-<div class="example">8 &gt; 5 → 8 बड़ा है / 8 is greater.</div>
-<div class="example">3 &lt; 7 → 3 छोटा है / 3 is smaller.</div>
-<div class="example">5 = 5 → दोनों बराबर हैं / Equal.</div>
-<div class="example">10 &gt; 6</div>
-<div class="example">4 &lt; 9</div>
-<div class="example">7 = 7</div>
-<div class="example">15 &gt; 10</div>
-<div class="example">12 &lt; 20</div>
-<div class="example">25 = 25</div>
-
+<div class="topbar">
+ <div class="brand">🇮🇳 FOJI TYPING MASTER PRO</div>
+ <div>
+  <button onclick="showPage('home')">🏠 Home</button>
+  <button onclick="showPage('practice')">⌨️ Practice</button>
+  <button onclick="showPage('test')">🏆 Test</button>
+ </div>
+</div>
+
+<div class="layout">
+
+<aside class="sidebar">
+ <h3>📚 MAIN MENU</h3>
+ <div class="sidebar-menu">
+  <button class="menu-btn active" onclick="showPage('home',this)">🏠 Dashboard</button>
+  <button class="menu-btn" onclick="showPage('syllabus',this)">📖 Typing Syllabus</button>
+  <button class="menu-btn" onclick="showPage('practice',this)">⌨️ Typing Practice</button>
+  <button class="menu-btn" onclick="showPage('test',this)">🏆 Typing Test</button>
+  <button class="menu-btn" onclick="showPage('words',this)">📝 Word Practice</button>
+  <button class="menu-btn" onclick="showPage('sentences',this)">💬 Sentence Practice</button>
+  <button class="menu-btn" onclick="showPage('paragraph',this)">📄 Paragraph Practice</button>
+  <button class="menu-btn" onclick="showPage('numbers',this)">🔢 Number Practice</button>
+  <button class="menu-btn" onclick="showPage('results',this)">📊 My Results</button>
+  <button class="menu-btn" onclick="showPage('keyboard',this)">⌨️ Keyboard Guide</button>
+  <button class="menu-btn" onclick="showPage('settings',this)">⚙️ Settings</button>
+ </div>
+</aside>
+
+<main class="main">
+
+<!-- DASHBOARD -->
+<section id="home" class="page active">
+
+<div class="welcome">
+ <h2>Welcome to FOJI TYPING MASTER PRO!</h2>
+ <p>Start your typing journey today. Learn keyboard keys, improve your speed and accuracy, and become a professional typist.</p>
+ <button class="success" onclick="showPage('syllabus')">START LEARNING →</button>
+</div>
+
+<div class="stats">
+ <div class="stat">⌨️ <small>Total Practice</small><strong id="totalPractice">0</strong></div>
+ <div class="stat">⚡ <small>Best WPM</small><strong id="bestWpm">0</strong></div>
+ <div class="stat">🎯 <small>Best Accuracy</small><strong id="bestAccuracy">0%</strong></div>
+ <div class="stat">🏆 <small>Completed Lessons</small><strong id="completedLessons">0</strong></div>
+</div>
+
+<div class="card">
+ <h2>📚 Your Typing Course</h2>
+ <p>12 levels | Beginner to Advanced</p>
+ <div class="progressbar"><div id="courseProgress"></div></div>
+ <p id="courseProgressText">0% Course Completed</p>
+ <button class="primary" onclick="showPage('syllabus')">View Full Syllabus</button>
+</div>
+
+<div class="card">
+ <h2>🚀 Quick Start</h2>
+ <button class="primary" onclick="startLesson(0)">Home Row</button>
+ <button class="primary" onclick="startLesson(4)">Mix Row</button>
+ <button class="primary" onclick="startWordCount(3)">3 Words Practice</button>
+ <button class="primary" onclick="showPage('test')">Typing Test</button>
 </div>
-
-
-<div id="mathPlace" class="lesson">
-
-<h2>🏠 Ones & Tens / इकाई-दहाई</h2>
-
-<div class="picture">🔢🏠</div>
-
-<div class="example">
-25 में 2 = Tens / दहाई<br>
-25 में 5 = Ones / इकाई
-</div>
-
-<div class="example">
-47 में 4 = Tens / दहाई<br>
-47 में 7 = Ones / इकाई
-</div>
-
-<div class="example">
-63 में 6 = Tens / दहाई<br>
-63 में 3 = Ones / इकाई
-</div>
-
-<div class="example">
-89 में 8 = Tens / दहाई<br>
-89 में 9 = Ones / इकाई
-</div>
-
-</div>
-
-
-<div id="mathTime" class="lesson">
-
-<h2>⏰ Time / समय</h2>
-
-<div class="picture">⏰🕐🕑🕒</div>
-
-<div class="example">1 दिन = 24 घंटे / hours</div>
-<div class="example">1 घंटा = 60 मिनट / minutes</div>
-<div class="example">1 सप्ताह = 7 दिन / days</div>
-<div class="example">1 साल = 12 महीने / months</div>
-<div class="example">60 minutes = 1 hour</div>
-<div class="example">24 hours = 1 day</div>
-
-</div>
-
-
-<div id="mathMoney" class="lesson">
-
-<h2>💰 Money / पैसे</h2>
-
-<div class="grid">
-
-<div class="card"><span>🪙</span>₹1</div>
-<div class="card"><span>🪙</span>₹2</div>
-<div class="card"><span>🪙</span>₹5</div>
-<div class="card"><span>💵</span>₹10</div>
-<div class="card"><span>💵</span>₹20</div>
-<div class="card"><span>💵</span>₹50</div>
-<div class="card"><span>💵</span>₹100</div>
-<div class="card"><span>💵</span>₹200</div>
-<div class="card"><span>💵</span>₹500</div>
-
-</div>
-
-<div class="example">
-₹5 + ₹5 = ₹10
-</div>
-
-<div class="example">
-₹10 + ₹20 = ₹30
-</div>
-
-<div class="example">
-₹50 + ₹50 = ₹100
-</div>
-
-</div>
-
-
-<div id="mathTables" class="lesson">
-
-<h2>✖️ Tables 1–50</h2>
-
-<div id="tablesContainer"></div>
-
-</div>
-
-
-<div id="mathQuiz" class="lesson">
-
-<h2>❓ Maths Quiz</h2>
-
-<div id="mathQuizBox" class="quizBox"></div>
-
-</div>
-
-</div>
-
-
-<!-- ================= HINDI ================= -->
-
-<div id="hindi" class="subject">
-
-<div class="subject-title hindiTitle">
-<h2>📕 Hindi / हिंदी</h2>
-</div>
-
-<div class="lesson-menu">
-
-<button onclick="openLesson('hindiSwar')">🔤 स्वर</button>
-<button onclick="openLesson('hindiVyanjan')">🔤 व्यंजन</button>
-<button onclick="openLesson('hindiMatra')">📖 मात्राएँ</button>
-<button onclick="openLesson('hindiWords')">🧩 सरल शब्द</button>
-<button onclick="openLesson('hindiSentences')">💬 सरल वाक्य</button>
-<button onclick="openLesson('hindiNumbers')">🔢 हिंदी गिनती 1–100</button>
-<button onclick="openLesson('hindiColours')">🎨 रंग</button>
-<button onclick="openLesson('hindiFruits')">🍎 फल</button>
-<button onclick="openLesson('hindiVegetables')">🥕 सब्जियाँ</button>
-<button onclick="openLesson('hindiAnimals')">🐘 पशु</button>
-<button onclick="openLesson('hindiBirds')">🐦 पक्षी</button>
-<button onclick="openLesson('hindiFamily')">👨‍👩‍👧 परिवार</button>
-<button onclick="openLesson('hindiDays')">📅 सप्ताह के दिन</button>
-<button onclick="openLesson('hindiMonths')">🗓️ महीने</button>
-<button onclick="openLesson('hindiQuiz')">❓ हिंदी Quiz – 50 Questions</button>
-
-</div>
-
-
-<div id="hindiSwar" class="lesson">
-
-<h2>🔤 हिंदी स्वर</h2>
-
-<div class="grid">
-
-<div class="card"><span>🍎</span>अ – अनार</div>
-<div class="card"><span>🥭</span>आ – आम</div>
-<div class="card"><span>🍋</span>इ – इमली</div>
-<div class="card"><span>🌾</span>ई – ईख</div>
-<div class="card"><span>🦉</span>उ – उल्लू</div>
-<div class="card"><span>🧶</span>ऊ – ऊन</div>
-<div class="card"><span>1️⃣</span>ए – एक</div>
-<div class="card"><span>👓</span>ऐ – ऐनक</div>
-<div class="card"><span>🍊</span>ओ – ओखली</div>
-<div class="card"><span>👩</span>औ – औरत</div>
-<div class="card"><span>🍇</span>अं – अंगूर</div>
-
-</div>
-</div>
-
-
-<div id="hindiVyanjan" class="lesson">
-
-<h2>🔤 व्यंजन</h2>
-
-<div class="grid">
-
-<div class="card"><span>🪁</span>क – कबूतर</div>
-<div class="card"><span>🐇</span>ख – खरगोश</div>
-<div class="card"><span>🌼</span>ग – गमला</div>
-<div class="card"><span>🏠</span>घ – घर</div>
-<div class="card"><span>🐦</span>च – चिड़िया</div>
-<div class="card"><span>☂️</span>छ – छाता</div>
-<div class="card"><span>🚢</span>ज – जहाज</div>
-<div class="card"><span>🌊</span>झ – झरना</div>
-<div class="card"><span>🍅</span>ट – टमाटर</div>
-<div class="card"><span>🥁</span>ठ – ठेला</div>
-<div class="card"><span>🥁</span>ड – डमरू</div>
-<div class="card"><span>🥁</span>ढ – ढोल</div>
-<div class="card"><span>🦜</span>त – तोता</div>
-<div class="card"><span>🍽️</span>थ – थाली</div>
-<div class="card"><span>🦷</span>द – दाँत</div>
-<div class="card"><span>🌾</span>ध – धन</div>
-<div class="card"><span>👃</span>न – नाक</div>
-<div class="card"><span>🪁</span>प – पतंग</div>
-<div class="card"><span>🌸</span>फ – फूल</div>
-<div class="card"><span>🦆</span>ब – बतख</div>
-<div class="card"><span>🐻</span>भ – भालू</div>
-<div class="card"><span>🐟</span>म – मछली</div>
-<div class="card"><span>🧘</span>य – योग</div>
-<div class="card"><span>🌈</span>र – रंग</div>
-<div class="card"><span>🍋</span>ल – नींबू</div>
-<div class="card"><span>🚗</span>व – वाहन</div>
-<div class="card"><span>🦁</span>श – शेर</div>
-<div class="card"><span>🐍</span>स – साँप</div>
-<div class="card"><span>🐘</span>ह – हाथी</div>
-
-</div>
-</div>
-
-
-<div id="hindiMatra" class="lesson">
-
-<h2>📖 मात्राएँ</h2>
-
-<div class="picture">क + ा = का</div>
-
-<div class="example">क + ा = <b>का</b> — आ की मात्रा</div>
-<div class="example">क + ि = <b>कि</b> — इ की मात्रा</div>
-<div class="example">क + ी = <b>की</b> — ई की मात्रा</div>
-<div class="example">क + ु = <b>कु</b> — उ की मात्रा</div>
-<div class="example">क + ू = <b>कू</b> — ऊ की मात्रा</div>
-<div class="example">क + े = <b>के</b> — ए की मात्रा</div>
-<div class="example">क + ै = <b>कै</b> — ऐ की मात्रा</div>
-<div class="example">क + ो = <b>को</b> — ओ की मात्रा</div>
-<div class="example">क + ौ = <b>कौ</b> — औ की मात्रा</div>
-
-</div>
-
-
-<div id="hindiWords" class="lesson">
-
-<h2>🧩 सरल शब्द</h2>
-
-<div class="grid">
-
-<div class="card"><span>🌸</span>फूल</div>
-<div class="card"><span>🏠</span>घर</div>
-<div class="card"><span>👦</span>बालक</div>
-<div class="card"><span>👧</span>लड़की</div>
-<div class="card"><span>🐱</span>बिल्ली</div>
-<div class="card"><span>🐶</span>कुत्ता</div>
-<div class="card"><span>🌳</span>पेड़</div>
-<div class="card"><span>💧</span>पानी</div>
-<div class="card"><span>🍎</span>सेब</div>
-<div class="card"><span>🥭</span>आम</div>
-<div class="card"><span>⚽</span>गेंद</div>
-<div class="card"><span>📚</span>किताब</div>
-<div class="card"><span>✏️</span>कलम</div>
-<div class="card"><span>🚗</span>कार</div>
-<div class="card"><span>🪑</span>कुर्सी</div>
-<div class="card"><span>🚪</span>दरवाजा</div>
-
-</div>
-</div>
-
-
-<div id="hindiSentences" class="lesson">
-
-<h2>💬 सरल वाक्य</h2>
-
-<div class="example">राम स्कूल जाता है।</div>
-<div class="example">सीता खाना खाती है।</div>
-<div class="example">यह मेरी किताब है।</div>
-<div class="example">यह मेरा घर है।</div>
-<div class="example">गाय घास खाती है।</div>
-<div class="example">मोर नाचता है।</div>
-<div class="example">बच्चे खेलते हैं।</div>
-<div class="example">सूरज चमकता है।</div>
-<div class="example">आम मीठा है।</div>
-<div class="example">पेड़ हरा है।</div>
-
-</div>
-
-
-<div id="hindiNumbers" class="lesson">
-
-<h2>🔢 हिंदी गिनती 1–100</h2>
-
-<div id="hindiNumberList" class="number-grid"></div>
-
-</div>
-
-
-<div id="hindiColours" class="lesson">
-
-<h2>🎨 रंग</h2>
-
-<div class="grid">
-
-<div class="card"><span>🔴</span>लाल</div>
-<div class="card"><span>🔵</span>नीला</div>
-<div class="card"><span>🟢</span>हरा</div>
-<div class="card"><span>🟡</span>पीला</div>
-<div class="card"><span>🟠</span>नारंगी</div>
-<div class="card"><span>🟣</span>बैंगनी</div>
-<div class="card"><span>⚫</span>काला</div>
-<div class="card"><span>⚪</span>सफेद</div>
-<div class="card"><span>🩷</span>गुलाबी</div>
-<div class="card"><span>🟤</span>भूरा</div>
-
-</div>
-</div>
-
-
-<div id="hindiFruits" class="lesson">
-
-<h2>🍎 फल</h2>
-
-<div class="grid">
-
-<div class="card"><span>🍎</span>सेब</div>
-<div class="card"><span>🍌</span>केला</div>
-<div class="card"><span>🥭</span>आम</div>
-<div class="card"><span>🍊</span>संतरा</div>
-<div class="card"><span>🍇</span>अंगूर</div>
-<div class="card"><span>🍉</span>तरबूज</div>
-<div class="card"><span>🍍</span>अनानास</div>
-<div class="card"><span>🥥</span>नारियल</div>
-<div class="card"><span>🍋</span>नींबू</div>
-<div class="card"><span>🍐</span>नाशपाती</div>
-<div class="card"><span>🍓</span>स्ट्रॉबेरी</div>
-<div class="card"><span>🥝</span>कीवी</div>
-<div class="card"><span>🍑</span>आड़ू</div>
-<div class="card"><span>🍒</span>चेरी</div>
-
-</div>
-</div>
-
-
-<div id="hindiVegetables" class="lesson">
-
-<h2>🥕 सब्जियाँ</h2>
-
-<div class="grid">
-
-<div class="card"><span>🥔</span>आलू</div>
-<div class="card"><span>🍅</span>टमाटर</div>
-<div class="card"><span>🥕</span>गाजर</div>
-<div class="card"><span>🥒</span>खीरा</div>
-<div class="card"><span>🌽</span>मक्का</div>
-<div class="card"><span>🧅</span>प्याज</div>
-<div class="card"><span>🫛</span>मटर</div>
-<div class="card"><span>🥬</span>पालक</div>
-<div class="card"><span>🍆</span>बैंगन</div>
-<div class="card"><span>🌶️</span>मिर्च</div>
-<div class="card"><span>🥦</span>ब्रोकोली</div>
-<div class="card"><span>🥒</span>लौकी</div>
-
-</div>
-</div>
-
-
-<div id="hindiAnimals" class="lesson">
-
-<h2>🐘 पशु</h2>
-
-<div class="grid">
-
-<div class="card"><span>🐘</span>हाथी</div>
-<div class="card"><span>🦁</span>शेर</div>
-<div class="card"><span>🐯</span>बाघ</div>
-<div class="card"><span>🐒</span>बंदर</div>
-<div class="card"><span>🐄</span>गाय</div>
-<div class="card"><span>🐐</span>बकरी</div>
-<div class="card"><span>🐎</span>घोड़ा</div>
-<div class="card"><span>🐪</span>ऊँट</div>
-<div class="card"><span>🐶</span>कुत्ता</div>
-<div class="card"><span>🐱</span>बिल्ली</div>
-<div class="card"><span>🐇</span>खरगोश</div>
-<div class="card"><span>🦊</span>लोमड़ी</div>
-<div class="card"><span>🐻</span>भालू</div>
-<div class="card"><span>🐺</span>भेड़िया</div>
-
-</div>
-</div>
-
-
-<div id="hindiBirds" class="lesson">
-
-<h2>🐦 पक्षी</h2>
-
-<div class="grid">
-
-<div class="card"><span>🦜</span>तोता</div>
-<div class="card"><span>🦚</span>मोर</div>
-<div class="card"><span>🐦</span>गौरैया</div>
-<div class="card"><span>🕊️</span>कबूतर</div>
-<div class="card"><span>🦉</span>उल्लू</div>
-<div class="card"><span>🦅</span>चील</div>
-<div class="card"><span>🦆</span>बतख</div>
-<div class="card"><span>🐔</span>मुर्गी</div>
-<div class="card"><span>🦢</span>हंस</div>
-<div class="card"><span>🐧</span>पेंगुइन</div>
-
-</div>
-</div>
-
-
-<div id="hindiFamily" class="lesson">
-
-<h2>👨‍👩‍👧 परिवार</h2>
-
-<div class="grid">
-
-<div class="card"><span>👨</span>पिता</div>
-<div class="card"><span>👩</span>माता</div>
-<div class="card"><span>👦</span>भाई</div>
-<div class="card"><span>👧</span>बहन</div>
-<div class="card"><span>👴</span>दादा</div>
-<div class="card"><span>👵</span>दादी</div>
-<div class="card"><span>👴</span>नाना</div>
-<div class="card"><span>👵</span>नानी</div>
-<div class="card"><span>👨</span>चाचा</div>
-<div class="card"><span>👩</span>चाची</div>
-
-</div>
-</div>
-
-
-<div id="hindiDays" class="lesson">
-
-<h2>📅 सप्ताह के दिन</h2>
-
-<div class="grid">
-
-<div class="card">सोमवार</div>
-<div class="card">मंगलवार</div>
-<div class="card">बुधवार</div>
-<div class="card">गुरुवार</div>
-<div class="card">शुक्रवार</div>
-<div class="card">शनिवार</div>
-<div class="card">रविवार</div>
-
-</div>
-</div>
-
-
-<div id="hindiMonths" class="lesson">
-
-<h2>🗓️ महीने</h2>
-
-<div class="grid">
-
-<div class="card">जनवरी</div>
-<div class="card">फरवरी</div>
-<div class="card">मार्च</div>
-<div class="card">अप्रैल</div>
-<div class="card">मई</div>
-<div class="card">जून</div>
-<div class="card">जुलाई</div>
-<div class="card">अगस्त</div>
-<div class="card">सितंबर</div>
-<div class="card">अक्टूबर</div>
-<div class="card">नवंबर</div>
-<div class="card">दिसंबर</div>
-
-</div>
-</div>
-
-
-<div id="hindiQuiz" class="lesson">
-
-<h2>❓ Hindi Quiz / हिंदी प्रश्न</h2>
-
-<div id="hindiQuizBox" class="quizBox"></div>
-
-</div>
-
-</div>
-
-</div>
-
-
-<footer>
-🌟 Class 1 Kids Learning 🌟<br>
-📚 पढ़ो • सीखो • खेलो • आगे बढ़ो 📚
-</footer>
-
-
-<script>
-
-/* ======================================
-   SUBJECT OPEN
-====================================== */
-
-function openSubject(id){
-
- var subjects=document.querySelectorAll(".subject");
-
- subjects.forEach(function(subject){
-   subject.classList.remove("show");
- });
-
- var selected=document.getElementById(id);
-
- if(selected){
-   selected.classList.add("show");
-
-   window.scrollTo({
-     top:selected.offsetTop-10,
-     behavior:"smooth"
-   });
- }
-}
-
-
-/* ======================================
-   LESSON OPEN
-====================================== */
-
-function openLesson(id){
-
- var lessons=document.querySelectorAll(".lesson");
-
- lessons.forEach(function(lesson){
-   lesson.classList.remove("show");
- });
-
- var selected=document.getElementById(id);
-
- if(selected){
-
-   selected.classList.add("show");
-
-   setTimeout(function(){
-
-     selected.scrollIntoView({
-       behavior:"smooth",
-       block:"start"
-     });
-
-   },100);
- }
-}
-
-
-/* ======================================
-   ENGLISH NUMBERS 1-200
-====================================== */
-
-var ones=[
-"Zero","One","Two","Three","Four",
-"Five","Six","Seven","Eight","Nine",
-"Ten","Eleven","Twelve","Thirteen","Fourteen",
-"Fifteen","Sixteen","Seventeen","Eighteen","Nineteen"
-];
-
-var tens=[
-"","","Twenty","Thirty","Forty",
-"Fifty","Sixty","Seventy","Eighty","Ninety"
-];
-
-function numberName(n){
-
- if(n<20) return ones[n];
-
- if(n<100){
-
-   var t=Math.floor(n/10);
-   var r=n%10;
-
-   return tens[t]+(r ? "-"+ones[r] : "");
- }
-
- if(n===100) return "One Hundred";
-
- if(n<200){
-
-   var r=n-100;
-
-   return "One Hundred"+(r ? " "+numberName(r) : "");
- }
-
- if(n===200) return "Two Hundred";
-
- return n;
-}
-
-var engNumberList=document.getElementById("engNumberList");
-
-for(var i=1;i<=200;i++){
-
- var e=document.createElement("div");
-
- e.className="number";
-
- e.innerHTML=i+"<br>"+numberName(i);
-
- engNumberList.appendChild(e);
-}
-
-
-/* ======================================
-   MATH COUNTING 1-200
-====================================== */
-
-var mathNumberList=document.getElementById("mathNumberList");
-
-for(var n=1;n<=200;n++){
-
- var m=document.createElement("div");
-
- m.className="number";
-
- m.innerHTML=n;
-
- mathNumberList.appendChild(m);
-}
-
-
-/* ======================================
-   HINDI NUMBERS
-====================================== */
-
-var hindiNumbers=[
-"एक","दो","तीन","चार","पाँच",
-"छह","सात","आठ","नौ","दस",
-"ग्यारह","बारह","तेरह","चौदह","पंद्रह",
-"सोलह","सत्रह","अठारह","उन्नीस","बीस",
-"इक्कीस","बाईस","तेईस","चौबीस","पच्चीस",
-"छब्बीस","सत्ताईस","अट्ठाईस","उनतीस","तीस",
-"इकतीस","बत्तीस","तैंतीस","चौंतीस","पैंतीस",
-"छत्तीस","सैंतीस","अड़तीस","उनतालीस","चालीस",
-"इकतालीस","बयालीस","तैंतालीस","चवालीस","पैंतालीस",
-"छियालीस","सैंतालीस","अड़तालीस","उनचास","पचास",
-"इक्यावन","बावन","तिरेपन","चौवन","पचपन",
-"छप्पन","सत्तावन","अट्ठावन","उनसठ","साठ",
-"इकसठ","बासठ","तिरसठ","चौंसठ","पैंसठ",
-"छियासठ","सड़सठ","अड़सठ","उनहत्तर","सत्तर",
-"इकहत्तर","बहत्तर","तिहत्तर","चौहत्तर","पचहत्तर",
-"छिहत्तर","सतहत्तर","अठहत्तर","उनासी","अस्सी",
-"इक्यासी","बयासी","तिरासी","चौरासी","पचासी",
-"छियासी","सत्तासी","अट्ठासी","नवासी","नब्बे",
-"इक्यानवे","बानवे","तिरानवे","चौरानवे","पंचानवे",
-"छियानवे","सत्तानवे","अट्ठानवे","निन्यानवे","एक सौ"
-];
-
-var hindiNumberList=document.getElementById("hindiNumberList");
-
-for(var h=0;h<100;h++){
-
- var hd=document.createElement("div");
-
- hd.className="number";
-
- hd.innerHTML=(h+1)+"<br>"+hindiNumbers[h];
-
- hindiNumberList.appendChild(hd);
-}
-
-
-/* ======================================
-   TABLES 1-50
-====================================== */
-
-var tablesContainer=document.getElementById("tablesContainer");
-
-for(var t=1;t<=50;t++){
-
- var box=document.createElement("div");
-
- box.className="example";
-
- var text="<b>Table "+t+" / "+t+" का पहाड़ा</b><br><br>";
-
- for(var j=1;j<=10;j++){
-
-   text+=t+" × "+j+" = "+(t*j)+"<br>";
-
- }
-
- box.innerHTML=text;
-
- tablesContainer.appendChild(box);
-}
-
-
-/* ======================================
-   QUIZ DATA
-====================================== */
-
-var englishQuiz=[
-["A is for?","Apple 🍎"],
-["B is for?","Ball ⚽"],
-["C is for?","Cat 🐱"],
-["D is for?","Dog 🐶"],
-["E is for?","Elephant 🐘"],
-["F is for?","Fish 🐟"],
-["G is for?","Grapes 🍇"],
-["H is for?","House 🏠"],
-["I is for?","Ice Cream 🍦"],
-["J is for?","Juice 🧃"],
-["K is for?","Kite 🪁"],
-["L is for?","Lion 🦁"],
-["M is for?","Monkey 🐒"],
-["N is for?","Nest 🪺"],
-["O is for?","Orange 🍊"],
-["P is for?","Parrot 🦜"],
-["Q is for?","Queen 👑"],
-["R is for?","Rabbit 🐇"],
-["S is for?","Sun ☀️"],
-["T is for?","Tree 🌳"],
-["How many vowels are there?","5"],
-["Which is a fruit?","Mango 🥭"],
-["Which is an animal?","Tiger 🐯"],
-["Which is a bird?","Parrot 🦜"],
-["What comes after 5?","6"],
-["What comes before 10?","9"],
-["How many days are in a week?","7"],
-["How many months are in a year?","12"],
-["Apple in Hindi?","सेब"],
-["Mango in Hindi?","आम"],
-["Dog in Hindi?","कुत्ता"],
-["Cat in Hindi?","बिल्ली"],
-["Sun in Hindi?","सूरज"],
-["Water in Hindi?","पानी"],
-["Red means?","लाल"],
-["Green means?","हरा"],
-["Blue means?","नीला"],
-["Mother means?","माता"],
-["Father means?","पिता"],
-["Brother means?","भाई"],
-["Sister means?","बहन"],
-["Eye means?","आँख"],
-["Hand means?","हाथ"],
-["Foot means?","पैर"],
-["Book means?","किताब"],
-["Pen means?","कलम"],
-["House means?","घर"],
-["School means?","स्कूल"],
-["What is the opposite of big?","Small"],
-["What is the opposite of hot?","Cold"]
-];
-
-
-var mathQuiz=[
-["1 + 1 = ?","2"],
-["2 + 2 = ?","4"],
-["3 + 2 = ?","5"],
-["4 + 3 = ?","7"],
-["5 + 5 = ?","10"],
-["6 + 2 = ?","8"],
-["7 + 3 = ?","10"],
-["8 + 4 = ?","12"],
-["9 + 5 = ?","14"],
-["10 + 10 = ?","20"],
-["12 + 3 = ?","15"],
-["15 + 5 = ?","20"],
-["20 + 10 = ?","30"],
-["25 + 5 = ?","30"],
-["30 + 20 = ?","50"],
-["5 - 1 = ?","4"],
-["6 - 2 = ?","4"],
-["7 - 3 = ?","4"],
-["8 - 4 = ?","4"],
-["10 - 5 = ?","5"],
-["10 - 2 = ?","8"],
-["12 - 4 = ?","8"],
-["15 - 5 = ?","10"],
-["20 - 10 = ?","10"],
-["25 - 5 = ?","20"],
-["What comes after 5?","6"],
-["What comes before 5?","4"],
-["Between 4 and 6?","5"],
-["Which is greater: 8 or 5?","8"],
-["Which is smaller: 3 or 7?","3"],
-["5 = ?","5"],
-["How many sides does a triangle have?","3"],
-["How many sides does a square have?","4"],
-["How many sides does a rectangle have?","4"],
-["How many days in a week?","7"],
-["How many months in a year?","12"],
-["1 hour = ? minutes","60"],
-["1 day = ? hours","24"],
-["1 week = ? days","7"],
-["1 year = ? months","12"],
-["₹5 + ₹5 = ?","₹10"],
-["₹10 + ₹20 = ?","₹30"],
-["10 tens = ?","100"],
-["25 में tens कौन है?","2"],
-["25 में ones कौन है?","5"],
-["47 में tens कौन है?","4"],
-["47 में ones कौन है?","7"],
-["Which is greater: 20 or 10?","20"],
-["Which is smaller: 4 or 9?","4"],
-["10 + 5 = ?","15"],
-["20 - 5 = ?","15"]
-];
-
-
-var hindiQuiz=[
-["अ से क्या होता है?","अनार 🍎"],
-["आ से क्या होता है?","आम 🥭"],
-["इ से क्या होता है?","इमली"],
-["ई से क्या होता है?","ईख"],
-["उ से क्या होता है?","उल्लू 🦉"],
-["ऊ से क्या होता है?","ऊन"],
-["ए से क्या होता है?","एक"],
-["ऐ से क्या होता है?","ऐनक"],
-["ओ से क्या होता है?","ओखली"],
-["औ से क्या होता है?","औरत"],
-["क से क्या होता है?","कबूतर"],
-["ख से क्या होता है?","खरगोश"],
-["ग से क्या होता है?","गमला"],
-["घ से क्या होता है?","घर"],
-["च से क्या होता है?","चिड़िया"],
-["छ से क्या होता है?","छाता"],
-["ज से क्या होता है?","जहाज"],
-["झ से क्या होता है?","झरना"],
-["ट से क्या होता है?","टमाटर"],
-["ठ से क्या होता है?","ठेला"],
-["ड से क्या होता है?","डमरू"],
-["ढ से क्या होता है?","ढोल"],
-["त से क्या होता है?","तोता"],
-["थ से क्या होता है?","थाली"],
-["द से क्या होता है?","दाँत"],
-["ध से क्या होता है?","धन"],
-["न से क्या होता है?","नाक"],
-["प से क्या होता है?","पतंग"],
-["फ से क्या होता है?","फूल"],
-["ब से क्या होता है?","बतख"],
-["भ से क्या होता है?","भालू"],
-["म से क्या होता है?","मछली"],
-["य से क्या होता है?","योग"],
-["र से क्या होता है?","रंग"],
-["ल से क्या होता है?","लड्डू"],
-["व से क्या होता है?","वाहन"],
-["श से क्या होता है?","शेर"],
-["स से क्या होता है?","साँप"],
-["ह से क्या होता है?","हाथी"],
-["1 को हिंदी में क्या कहते हैं?","एक"],
-["2 को हिंदी में क्या कहते हैं?","दो"],
-["3 को हिंदी में क्या कहते हैं?","तीन"],
-["5 को हिंदी में क्या कहते हैं?","पाँच"],
-["10 को हिंदी में क्या कहते हैं?","दस"],
-["सेब क्या है?","फल 🍎"],
-["आलू क्या है?","सब्जी 🥔"],
-["मोर क्या है?","पक्षी 🦚"],
-["गाय क्या है?","पशु 🐄"],
-["एक सप्ताह में कितने दिन?","7"],
-["एक वर्ष में कितने महीने?","12"]
-];
-
-
-/* ======================================
-   QUIZ ENGINE
-====================================== */
-
-var quizState={
- english:{questions:englishQuiz,index:0,score:0},
- math:{questions:mathQuiz,index:0,score:0},
- hindi:{questions:hindiQuiz,index:0,score:0}
-};
-
-
-function makeOptions(correct,index){
-
- var options=[correct];
-
- var extra=[
- "Apple 🍎",
- "5",
- "7",
- "10",
- "आम 🥭",
- "कुत्ता 🐶",
- "3",
- "12",
- "लाल",
- "20"
- ];
-
- for(var i=0;i<extra.length;i++){
-
-   if(options.indexOf(extra[i])===-1){
-      options.push(extra[i]);
-   }
-
-   if(options.length>=4) break;
- }
-
- var shift=index%options.length;
-
- var shuffled=[];
-
- for(var j=0;j<options.length;j++){
-   shuffled.push(options[(j+shift)%options.length]);
- }
-
- return shuffled;
-}
-
-
-function showQuiz(type,boxId){
-
- var state=quizState[type];
-
- var box=document.getElementById(boxId);
-
- var total=state.questions.length;
-
- if(state.index>=total){
-
-   box.innerHTML=
-   "<div class='picture'>🏆🎉👏</div>"+
-   "<div class='result correct'>"+
-   "Quiz Complete! / प्रश्न पूरे हो गए!<br><br>"+
-   "Score / अंक: "+state.score+" / "+total+
-   "</div>"+
-   "<button class='nextBtn' onclick=\"restartQuiz('"+type+"','"+boxId+"')\">"+
-   "🔄 Restart Quiz / फिर से शुरू करें"+
-   "</button>";
-
-   return;
- }
-
- var q=state.questions[state.index];
-
- var html=
- "<div class='progress'>"+
- "Question / प्रश्न "+(state.index+1)+" / "+total+
- "</div>";
-
- html+=
- "<div class='quizQuestion'>"+
- q[0]+
- "</div>";
-
- var options=makeOptions(q[1],state.index);
-
- for(var i=0;i<options.length;i++){
-
-   html+=
-   "<button class='option' onclick=\"checkAnswer('"+
-   type+"','"+boxId+"','"+escapeQuotes(options[i])+
-   "',this)\">"+
-   options[i]+
-   "</button>";
- }
-
- html+="<div id='"+type+"Result' class='result'></div>";
-
- html+=
- "<button class='nextBtn' id='"+type+"Next' "+
- "style='display:none' "+
- "onclick=\"nextQuestion('"+type+"','"+boxId+"')\">"+
- "➡️ Next Question / अगला प्रश्न"+
- "</button>";
-
- box.innerHTML=html;
-}
-
-
-function escapeQuotes(text){
-
- return text
- .replace(/\\/g,"\\\\")
- .replace(/'/g,"\\'")
- .replace(/"/g,"&quot;");
-
-}
-
-
-function checkAnswer(type,boxId,answer,button){
-
- var state=quizState[type];
-
- var correct=state.questions[state.index][1];
-
- var buttons=button.parentElement.querySelectorAll(".option");
-
- buttons.forEach(function(btn){
-   btn.disabled=true;
- });
-
- var result=document.getElementById(type+"Result");
-
- if(answer===correct){
-
-   state.score++;
-
-   result.className="result correct";
-
-   result.innerHTML=
-   "🎉👏 Correct! सही उत्तर!<br>"+
-   "बहुत बढ़िया! शाबाश! ⭐";
-
-   clapSound();
-
- }else{
-
-   result.className="result wrong";
-
-   result.innerHTML=
-   "😊 Try Again!<br>"+
-   "सही उत्तर / Correct Answer: <b>"+
-   correct+
-   "</b>";
-
- }
-
- document.getElementById(type+"Next").style.display="block";
-}
-
-
-function nextQuestion(type,boxId){
-
- quizState[type].index++;
-
- showQuiz(type,boxId);
-}
-
-
-function restartQuiz(type,boxId){
-
- quizState[type].index=0;
- quizState[type].score=0;
-
- showQuiz(type,boxId);
-}
-
-
-/* ======================================
-   CLAP SOUND
-====================================== */
-
-function clapSound(){
-
- try{
-
-   var AudioContext=
-   window.AudioContext ||
-   window.webkitAudioContext;
-
-   if(!AudioContext){
-     alert("आपके browser में sound support नहीं है।");
-     return;
-   }
-
-   var audio=new AudioContext();
-
-   if(audio.state==="suspended"){
-     audio.resume();
-   }
-
-   for(var i=0;i<8;i++){
-
-     (function(i){
-
-       setTimeout(function(){
-
-         var osc=audio.createOscillator();
-         var gain=audio.createGain();
-
-         osc.type="square";
-
-         osc.frequency.value=
-         500+Math.random()*800;
-
-         gain.gain.setValueAtTime(
-           0.12,
-           audio.currentTime
-         );
-
-         gain.gain.exponentialRampToValueAtTime(
-           0.001,
-           audio.currentTime+0.08
-         );
-
-         osc.connect(gain);
-         gain.connect(audio.destination);
-
-         osc.start();
-
-         osc.stop(audio.currentTime+0.08);
-
-       },i*90);
-
-     })(i);
-
-   }
-
- }catch(e){
-
-   console.log(e);
-
- }
-
-}
-
-
-/* ======================================
-   START QUIZZES
-====================================== */
-
-showQuiz(
- "english",
- "engQuizBox"
-);
-
-showQuiz(
- "math",
- "mathQuizBox"
-);
-
-showQuiz(
- "hindi",
- "hindiQuizBox"
-);
-
-</script>
-<!-- =========================================================
-     🎬 3D STORY MAKER PRO
-     Add-on Section
-     ========================================================= -->
-
-<section id="story-maker-pro" style="
-  margin:30px 12px;
-  padding:20px;
-  border-radius:20px;
-  background:linear-gradient(135deg,#10182d,#17264a);
-  color:#fff;
-  border:1px solid #304875;
-  box-shadow:0 15px 40px rgba(0,0,0,.25);
-">
-
-  <div style="text-align:center;margin-bottom:20px;">
-    <div style="font-size:34px;">🎬</div>
-
-    <h2 style="
-      margin:5px 0;
-      font-size:28px;
-    ">
-      3D Story Maker PRO
-    </h2>
-
-    <p style="
-      margin:0;
-      color:#b8c6e5;
-    ">
-      Create your own 3D story scenes with characters
-    </p>
-  </div>
-
-
-  <!-- CHARACTER BUTTONS -->
-
-  <div style="
-    display:flex;
-    flex-wrap:wrap;
-    gap:8px;
-    justify-content:center;
-    margin-bottom:15px;
-  ">
-
-    <button class="sm-character-btn" data-sm-character="king">
-      👑 King
-    </button>
-
-    <button class="sm-character-btn" data-sm-character="minister">
-      🧑‍💼 Minister
-    </button>
-
-    <button class="sm-character-btn" data-sm-character="sage">
-      🧙 Sage
-    </button>
-
-    <button class="sm-character-btn" data-sm-character="woodcutter">
-      🪓 Woodcutter
-    </button>
-
-    <button class="sm-character-btn" data-sm-character="boy">
-      👦 Boy
-    </button>
-
-    <button class="sm-character-btn" data-sm-character="girl">
-      👧 Girl
-    </button>
-
-    <button class="sm-character-btn" data-sm-character="merchant">
-      🧑 Merchant
-    </button>
-
-    <button class="sm-character-btn" data-sm-character="warrior">
-      ⚔️ Warrior
-    </button>
-
-  </div>
-
-
-  <!-- MAIN EDITOR -->
-
-  <div style="
-    display:grid;
-    grid-template-columns:minmax(0,1fr) 280px;
-    gap:15px;
-  ">
-
-
-    <!-- 3D VIEW -->
-
-    <div style="
-      position:relative;
-      min-width:0;
-      background:#050914;
-      border:1px solid #304875;
-      border-radius:15px;
-      overflow:hidden;
-      min-height:500px;
-    ">
-
-      <canvas id="sm3dCanvas" style="
-        display:block;
-        width:100%;
-        height:500px;
-      "></canvas>
-
-      <div id="smLoading" style="
-        position:absolute;
-        top:15px;
-        left:50%;
-        transform:translateX(-50%);
-        display:none;
-        background:#16274b;
-        border:1px solid #5573ae;
-        padding:9px 15px;
-        border-radius:20px;
-        font-size:13px;
-        z-index:5;
-      ">
-        ⏳ Loading...
-      </div>
-
-      <div id="smError" style="
-        position:absolute;
-        left:12px;
-        right:12px;
-        bottom:12px;
-        display:none;
-        background:#461c28;
-        border:1px solid #a64e62;
-        color:#ffdce3;
-        padding:12px;
-        border-radius:10px;
-        font-size:12px;
-        z-index:5;
-        white-space:pre-wrap;
-      "></div>
-
-      <div style="
-        position:absolute;
-        bottom:12px;
-        right:12px;
-        background:rgba(0,0,0,.65);
-        padding:7px 10px;
-        border-radius:8px;
-        color:#b9c7df;
-        font-size:11px;
-      ">
-        🖱️ Drag = Rotate | Wheel = Zoom
-      </div>
-
-    </div>
-
-
-    <!-- CONTROLS -->
-
-    <div style="
-      background:#0d162b;
-      border:1px solid #304875;
-      border-radius:15px;
-      padding:15px;
-    ">
-
-      <h3 style="margin-top:0;">
-        🎛️ Controls
-      </h3>
-
-
-      <div style="
-        padding:10px;
-        background:#131f3a;
-        border-radius:9px;
-        margin-bottom:10px;
-      ">
-
-        <div style="
-          color:#8fa5cd;
-          font-size:11px;
-        ">
-          SELECTED CHARACTER
-        </div>
-
-        <strong id="smSelectedName">
-          King
-        </strong>
-
-        <div id="smFileName" style="
-          color:#8295bb;
-          font-size:11px;
-          margin-top:4px;
-          word-break:break-all;
-        ">
-          Character/King.GLB
-        </div>
-
-      </div>
-
-
-      <!-- STATUS -->
-
-      <div id="smStatus" style="
-        padding:9px;
-        border-radius:8px;
-        background:#18284a;
-        color:#b8c8e8;
-        font-size:12px;
-        margin-bottom:12px;
-      ">
-        Ready
-      </div>
-
-
-      <!-- ANIMATION -->
-
-      <label style="
-        display:block;
-        color:#9dafcf;
-        font-size:12px;
-        margin-bottom:5px;
-      ">
-        🎞️ Animation
-      </label>
-
-      <select id="smAnimation" style="
-        width:100%;
-        padding:9px;
-        border-radius:8px;
-        background:#091225;
-        color:white;
-        border:1px solid #334a75;
-        margin-bottom:10px;
-      ">
-
-        <option value="">
-          No animation
-        </option>
-
-      </select>
-
-
-      <div style="
-        display:grid;
-        grid-template-columns:1fr 1fr;
-        gap:7px;
-        margin-bottom:12px;
-      ">
-
-        <button id="smPlay">▶ Play</button>
-        <button id="smPause">⏸ Pause</button>
-        <button id="smStop">⏹ Stop</button>
-        <button id="smReset">🔄 Reset</button>
-
-      </div>
-
-
-      <!-- TRANSFORM -->
-
-      <h4 style="margin:8px 0;">
-        📐 Character Position
-      </h4>
-
-      <label style="font-size:11px;color:#91a5c8;">
-        X
-      </label>
-
-      <input id="smX" type="number" value="0" step="0.1"
-        style="
-          width:100%;
-          padding:7px;
-          margin:3px 0 7px;
-          background:#091225;
-          color:white;
-          border:1px solid #334a75;
-          border-radius:7px;
-        ">
-
-
-      <label style="font-size:11px;color:#91a5c8;">
-        Y
-      </label>
-
-      <input id="smY" type="number" value="0" step="0.1"
-        style="
-          width:100%;
-          padding:7px;
-          margin:3px 0 7px;
-          background:#091225;
-          color:white;
-          border:1px solid #334a75;
-          border-radius:7px;
-        ">
-
-
-      <label style="font-size:11px;color:#91a5c8;">
-        Z
-      </label>
-
-      <input id="smZ" type="number" value="0" step="0.1"
-        style="
-          width:100%;
-          padding:7px;
-          margin:3px 0 7px;
-          background:#091225;
-          color:white;
-          border:1px solid #334a75;
-          border-radius:7px;
-        ">
-
-
-      <label style="font-size:11px;color:#91a5c8;">
-        Rotation Y
-      </label>
-
-      <input id="smRot" type="number" value="0" step="5"
-        style="
-          width:100%;
-          padding:7px;
-          margin:3px 0 7px;
-          background:#091225;
-          color:white;
-          border:1px solid #334a75;
-          border-radius:7px;
-        ">
-
-
-      <label style="font-size:11px;color:#91a5c8;">
-        Scale
-      </label>
-
-      <input id="smScale" type="number" value="1" step="0.1" min="0.1"
-        style="
-          width:100%;
-          padding:7px;
-          margin:3px 0 10px;
-          background:#091225;
-          color:white;
-          border:1px solid #334a75;
-          border-radius:7px;
-        ">
-
-
-      <!-- CAMERA -->
-
-      <h4 style="margin:8px 0;">
-        📷 Camera
-      </h4>
-
-      <div style="
-        display:grid;
-        grid-template-columns:1fr 1fr;
-        gap:7px;
-      ">
-
-        <button id="smFront">Front</button>
-        <button id="smSide">Side</button>
-        <button id="smTop">Top</button>
-        <button id="smCameraReset">Reset</button>
-
-      </div>
-
-
-      <!-- BACKGROUND -->
-
-      <h4 style="margin:14px 0 6px;">
-        🌄 Background
-      </h4>
-
-      <select id="smBackground" style="
-        width:100%;
-        padding:9px;
-        border-radius:8px;
-        background:#091225;
-        color:white;
-        border:1px solid #334a75;
-      ">
-
-        <option value="dark">
-          Dark
-        </option>
-
-        <option value="blue">
-          Blue
-        </option>
-
-        <option value="forest">
-          Forest
-        </option>
-
-        <option value="sunset">
-          Sunset
-        </option>
-
-        <option value="white">
-          Studio White
-        </option>
-
-      </select>
-
-    </div>
-
-  </div>
-
-
-  <!-- INFO -->
-
-  <div style="
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:8px;
-    margin-top:15px;
-  ">
-
-    <div class="sm-stat">
-      <small>Bones</small>
-      <strong id="smBones">0</strong>
-    </div>
-
-    <div class="sm-stat">
-      <small>Meshes</small>
-      <strong id="smMeshes">0</strong>
-    </div>
-
-    <div class="sm-stat">
-      <small>Skinned</small>
-      <strong id="smSkinned">0</strong>
-    </div>
-
-    <div class="sm-stat">
-      <small>Animations</small>
-      <strong id="smAnimations">0</strong>
-    </div>
-
-  </div>
 
 </section>
 
-
-<style>
-
-/* 3D STORY MAKER BUTTONS */
-
-.sm-character-btn,
-#smPlay,
-#smPause,
-#smStop,
-#smReset,
-#smFront,
-#smSide,
-#smTop,
-#smCameraReset{
-
-  border:1px solid #3a5280;
-  background:#172746;
-  color:#fff;
-
-  padding:9px 11px;
-
-  border-radius:8px;
-
-  cursor:pointer;
-
-  transition:.2s;
-
-}
-
-.sm-character-btn:hover,
-#smPlay:hover,
-#smPause:hover,
-#smStop:hover,
-#smReset:hover,
-#smFront:hover,
-#smSide:hover,
-#smTop:hover,
-#smCameraReset:hover{
-
-  background:#263d68;
-
-  transform:translateY(-1px);
-
-}
-
-
-.sm-stat{
-
-  background:#101c34;
-
-  border:1px solid #304875;
-
-  border-radius:9px;
-
-  padding:10px;
-
-  text-align:center;
-
-}
-
-.sm-stat small{
-
-  display:block;
-
-  color:#879bc1;
-
-  font-size:10px;
-
-}
-
-.sm-stat strong{
-
-  display:block;
-
-  font-size:18px;
-
-  margin-top:3px;
-
-}
-
-
-/* MOBILE */
-
-@media(max-width:800px){
-
-  #story-maker-pro > div:nth-of-type(2){
-
-    grid-template-columns:1fr !important;
-
-  }
-
-  #sm3dCanvas{
-
-    height:430px !important;
-
-  }
-
-  .sm-stat{
-
-    padding:8px 4px;
-
-  }
-
-}
-
-@media(max-width:500px){
-
-  #story-maker-pro{
-
-    margin:20px 5px !important;
-
-    padding:12px !important;
-
-  }
-
-  #sm3dCanvas{
-
-    height:380px !important;
-
-  }
-
-  #story-maker-pro > div:last-child{
-
-    grid-template-columns:1fr 1fr !important;
-
-  }
-
-}
-
-</style>
-
-
-<script type="module">
-
-/* =========================================================
-   3D STORY MAKER PRO ENGINE
-   Uses Three.js directly from jsDelivr.
-   ========================================================= */
-
-import * as THREE from
-  "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js";
-
-import { GLTFLoader } from
-  "https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/loaders/GLTFLoader.js";
-
-import { OrbitControls } from
-  "https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/controls/OrbitControls.js";
-
-
-/* ---------------------------------------------------------
-   CHARACTER FILES
-   --------------------------------------------------------- */
-
-const SM_CHARACTERS = {
-
-  king:{
-    name:"King",
-    file:"Character/King.GLB"
-  },
-
-  minister:{
-    name:"Minister",
-    file:"Character/Minister.GLB"
-  },
-
-  sage:{
-    name:"Sage",
-    file:"Character/Sage.GLB"
-  },
-
-  woodcutter:{
-    name:"Woodcutter",
-    file:"Character/Woodcutter.GLB"
-  },
-
-  boy:{
-    name:"Boy",
-    file:"Character/Boy.GLB"
-  },
-
-  girl:{
-    name:"Girl",
-    file:"Character/Girl.GLB"
-  },
-
-  merchant:{
-    name:"Merchant",
-    file:"Character/Merchant.GLB"
-  },
-
-  warrior:{
-    name:"Warrior",
-    file:"Character/Warrior.GLB"
-  }
-
-};
-
-
-/* ---------------------------------------------------------
-   ELEMENTS
-   --------------------------------------------------------- */
-
-const canvas =
-  document.getElementById("sm3dCanvas");
-
-const loading =
-  document.getElementById("smLoading");
-
-const errorBox =
-  document.getElementById("smError");
-
-const statusBox =
-  document.getElementById("smStatus");
-
-const selectedName =
-  document.getElementById("smSelectedName");
-
-const fileName =
-  document.getElementById("smFileName");
-
-const animationSelect =
-  document.getElementById("smAnimation");
-
-const bones =
-  document.getElementById("smBones");
-
-const meshes =
-  document.getElementById("smMeshes");
-
-const skinned =
-  document.getElementById("smSkinned");
-
-const animations =
-  document.getElementById("smAnimations");
-
-
-/* ---------------------------------------------------------
-   THREE.JS
-   --------------------------------------------------------- */
-
-const renderer =
-  new THREE.WebGLRenderer({
-
-    canvas:canvas,
-
-    antialias:true
-
-  });
-
-
-renderer.setPixelRatio(
-  Math.min(window.devicePixelRatio,2)
-);
-
-renderer.setSize(
-  canvas.clientWidth,
-  canvas.clientHeight,
-  false
-);
-
-renderer.outputColorSpace =
-  THREE.SRGBColorSpace;
-
-renderer.shadowMap.enabled = true;
-
-
-const scene =
-  new THREE.Scene();
-
-scene.background =
-  new THREE.Color(0x050914);
-
-
-const camera =
-  new THREE.PerspectiveCamera(
-
-    45,
-
-    canvas.clientWidth /
-    canvas.clientHeight,
-
-    0.01,
-
-    1000
-
-  );
-
-
-camera.position.set(
-  3,
-  2,
-  5
-);
-
-
-const controls =
-  new OrbitControls(
-    camera,
-    renderer.domElement
-  );
-
-
-controls.enableDamping = true;
-
-controls.target.set(
-  0,
-  1,
-  0
-);
-
-
-/* ---------------------------------------------------------
-   LIGHTS
-   --------------------------------------------------------- */
-
-scene.add(
-
-  new THREE.HemisphereLight(
-    0xffffff,
-    0x334466,
-    2
-  )
-
-);
-
-
-const light =
-  new THREE.DirectionalLight(
-    0xffffff,
-    3
-  );
-
-light.position.set(
-  5,
-  8,
-  5
-);
-
-light.castShadow = true;
-
-scene.add(light);
-
-
-const fill =
-  new THREE.DirectionalLight(
-    0x88aaff,
-    1
-  );
-
-fill.position.set(
-  -4,
-  4,
-  -3
-);
-
-scene.add(fill);
-
-
-/* ---------------------------------------------------------
-   GROUND
-   --------------------------------------------------------- */
-
-const ground =
-  new THREE.Mesh(
-
-    new THREE.PlaneGeometry(
-      30,
-      30
-    ),
-
-    new THREE.MeshStandardMaterial({
-
-      color:0x111827,
-
-      roughness:1
-
-    })
-
-  );
-
-ground.rotation.x =
-  -Math.PI / 2;
-
-ground.receiveShadow = true;
-
-scene.add(ground);
-
-
-/* ---------------------------------------------------------
-   VARIABLES
-   --------------------------------------------------------- */
-
-const loader =
-  new GLTFLoader();
-
-let currentModel = null;
-
-let mixer = null;
-
-let actions = {};
-
-let currentAction = null;
-
-let currentKey = "king";
-
-const clock =
-  new THREE.Clock();
-
-
-/* ---------------------------------------------------------
-   ERROR
-   --------------------------------------------------------- */
-
-function showError(message){
-
-  errorBox.style.display =
-    "block";
-
-  errorBox.textContent =
-    "⚠️ " + message;
-
-}
-
-
-function clearError(){
-
-  errorBox.style.display =
-    "none";
-
-}
-
-
-/* ---------------------------------------------------------
-   ANALYZE MODEL
-   --------------------------------------------------------- */
-
-function analyzeModel(
-  model,
-  clips
-){
-
-  let boneCount = 0;
-
-  let meshCount = 0;
-
-  let skinnedCount = 0;
-
-
-  model.traverse(obj=>{
-
-    if(obj.isBone){
-
-      boneCount++;
-
-    }
-
-
-    if(obj.isMesh){
-
-      meshCount++;
-
-      obj.castShadow = true;
-
-      obj.receiveShadow = true;
-
-    }
-
-
-    if(obj.isSkinnedMesh){
-
-      skinnedCount++;
-
-    }
-
-  });
-
-
-  bones.textContent =
-    boneCount;
-
-  meshes.textContent =
-    meshCount;
-
-  skinned.textContent =
-    skinnedCount;
-
-  animations.textContent =
-    clips.length;
-
-}
-
-
-/* ---------------------------------------------------------
-   ANIMATIONS
-   --------------------------------------------------------- */
-
-function setupAnimations(
-  model,
-  clips
-){
-
-  animationSelect.innerHTML =
-    '<option value="">No animation</option>';
-
-
-  actions = {};
-
-  currentAction = null;
-
-
-  if(mixer){
-
-    mixer.stopAllAction();
-
-  }
-
-
-  mixer = null;
-
-
-  if(!clips.length){
-
-    return;
-
-  }
-
-
-  mixer =
-    new THREE.AnimationMixer(
-      model
-    );
-
-
-  clips.forEach((clip,index)=>{
-
-    const name =
-      clip.name ||
-      "Animation " +
-      (index + 1);
-
-
-    const action =
-      mixer.clipAction(
-        clip
-      );
-
-
-    actions[name] =
-      action;
-
-
-    const option =
-      document.createElement(
-        "option"
-      );
-
-
-    option.value =
-      name;
-
-    option.textContent =
-      name;
-
-
-    animationSelect.appendChild(
-      option
-    );
-
-  });
-
-
-  const first =
-    animationSelect.value;
-
-
-  if(first){
-
-    currentAction =
-      actions[first];
-
-  }
-
-}
-
-
-/* ---------------------------------------------------------
-   LOAD CHARACTER
-   --------------------------------------------------------- */
-
-function loadCharacter(key){
-
-  const data =
-    SM_CHARACTERS[key];
-
-  if(!data){
-
-    return;
-
-  }
-
-
-  currentKey =
-    key;
-
-
-  selectedName.textContent =
-    data.name;
-
-  fileName.textContent =
-    data.file;
-
-
-  clearError();
-
-
-  statusBox.textContent =
-    "⏳ Loading " +
-    data.name +
-    "...";
-
-
-  loading.style.display =
-    "block";
-
-
-  if(currentModel){
-
-    scene.remove(
-      currentModel
-    );
-
-    currentModel =
-      null;
-
-  }
-
-
-  if(mixer){
-
-    mixer.stopAllAction();
-
-    mixer = null;
-
-  }
-
-
-  loader.load(
-
-    data.file,
-
-    gltf=>{
-
-      loading.style.display =
-        "none";
-
-
-      currentModel =
-        gltf.scene;
-
-
-      currentModel.position.set(
-        0,
-        0,
-        0
-      );
-
-
-      currentModel.rotation.set(
-        0,
-        0,
-        0
-      );
-
-
-      currentModel.scale.set(
-        1,
-        1,
-        1
-      );
-
-
-      scene.add(
-        currentModel
-      );
-
-
-      analyzeModel(
-        currentModel,
-        gltf.animations
-      );
-
-
-      setupAnimations(
-        currentModel,
-        gltf.animations
-      );
-
-
-      statusBox.textContent =
-        "✅ " +
-        data.name +
-        " loaded successfully";
-
-
-      statusBox.style.color =
-        "#9de0b5";
-
-
-      fitModel(
-        currentModel
-      );
-
-
-      updateInputs();
-
-    },
-
-    xhr=>{
-
-      if(xhr.total){
-
-        const percent =
-          Math.round(
-
-            xhr.loaded /
-            xhr.total *
-            100
-
-          );
-
-
-        loading.textContent =
-          "⏳ Loading " +
-          percent +
-          "%";
-
-      }
-
-    },
-
-    error=>{
-
-      loading.style.display =
-        "none";
-
-
-      statusBox.textContent =
-        "❌ Model not found";
-
-
-      statusBox.style.color =
-        "#ffadb9";
-
-
-      showError(
-
-        "GLB file नहीं मिली.\n\n" +
-
-        "Expected:\n" +
-        data.file +
-        "\n\n" +
-
-        "GitHub में folder/file name " +
-        "का Capital और Small letter " +
-        "बिल्कुल match होना चाहिए."
-
-      );
-
-    }
-
-  );
-
-}
-
-
-/* ---------------------------------------------------------
-   FIT CAMERA
-   --------------------------------------------------------- */
-
-function fitModel(model){
-
-  const box =
-    new THREE.Box3()
-      .setFromObject(model);
-
-
-  if(box.isEmpty()){
-
-    return;
-
-  }
-
-
-  const size =
-    box.getSize(
-      new THREE.Vector3()
-    );
-
-
-  const center =
-    box.getCenter(
-      new THREE.Vector3()
-    );
-
-
-  const maxSize =
-    Math.max(
-      size.x,
-      size.y,
-      size.z
-    );
-
-
-  const distance =
-    maxSize * 2.5;
-
-
-  camera.position.set(
-
-    center.x + distance,
-
-    center.y +
-    maxSize * .4,
-
-    center.z + distance
-
-  );
-
-
-  controls.target.copy(
-    center
-  );
-
-
-  controls.update();
-
-}
-
-
-/* ---------------------------------------------------------
-   INPUTS
-   --------------------------------------------------------- */
-
-function updateInputs(){
-
-  if(!currentModel){
-
-    return;
-
-  }
-
-
-  document.getElementById(
-    "smX"
-  ).value =
-    currentModel.position.x;
-
-
-  document.getElementById(
-    "smY"
-  ).value =
-    currentModel.position.y;
-
-
-  document.getElementById(
-    "smZ"
-  ).value =
-    currentModel.position.z;
-
-
-  document.getElementById(
-    "smRot"
-  ).value =
-    THREE.MathUtils.radToDeg(
-      currentModel.rotation.y
-    );
-
-
-  document.getElementById(
-    "smScale"
-  ).value =
-    currentModel.scale.x;
-
-}
-
-
-/* ---------------------------------------------------------
-   TRANSFORM
-   --------------------------------------------------------- */
-
-function updateTransform(){
-
-  if(!currentModel){
-
-    return;
-
-  }
-
-
-  currentModel.position.x =
-    Number(
-      document.getElementById("smX").value
-    ) || 0;
-
-
-  currentModel.position.y =
-    Number(
-      document.getElementById("smY").value
-    ) || 0;
-
-
-  currentModel.position.z =
-    Number(
-      document.getElementById("smZ").value
-    ) || 0;
-
-
-  currentModel.rotation.y =
-    THREE.MathUtils.degToRad(
-
-      Number(
-        document.getElementById("smRot").value
-      ) || 0
-
-    );
-
-
-  const scale =
-    Number(
-      document.getElementById("smScale").value
-    ) || 1;
-
-
-  currentModel.scale.set(
-    scale,
-    scale,
-    scale
-  );
-
-}
-
-
-/* ---------------------------------------------------------
-   TRANSFORM EVENTS
-   --------------------------------------------------------- */
-
+<!-- SYLLABUS -->
+<section id="syllabus" class="page">
+<div class="card">
+ <h2>📖 Complete Typing Syllabus</h2>
+ <p>Follow each level step by step.</p>
+ <div class="grid" id="syllabusGrid"></div>
+</div>
+</section>
+
+<!-- PRACTICE -->
+<section id="practice" class="page">
+
+<div class="card">
+ <h2>⌨️ Typing Practice Room</h2>
+ <p id="practiceTitle">Select a lesson to begin.</p>
+
+ <div class="exercise-info">
+  <div class="info-box">Speed<strong id="liveWpm">0</strong><small>WPM</small></div>
+  <div class="info-box">Accuracy<strong id="liveAccuracy">100%</strong></div>
+  <div class="info-box">Errors<strong id="liveErrors">0</strong></div>
+  <div class="info-box">Time<strong id="liveTime">00:00</strong></div>
+ </div>
+
+ <div class="lesson-text">
+  <b>Instructions:</b> Type the displayed text below. Try to use the correct finger for each key.
+ </div>
+
+ <div id="targetText" class="target">Choose a lesson from the syllabus.</div>
+
+ <textarea id="typingInput" placeholder="Start typing here..." disabled spellcheck="false" autocapitalize="off"></textarea>
+
+ <div style="margin-top:12px">
+  <button class="primary" onclick="resetPractice()">🔄 Restart</button>
+  <button class="success" onclick="finishPractice()">✓ Finish Lesson</button>
+  <button class="secondary" onclick="nextLesson()">Next Lesson →</button>
+ </div>
+
+ <div id="practiceResult"></div>
+</div>
+
+<div class="card">
+ <h3>⌨️ Virtual Keyboard</h3>
+ <div id="virtualKeyboard" class="keyboard"></div>
+ <div class="finger-legend">
+  <span style="background:#ffd6d6">Left Little</span>
+  <span style="background:#ffe7c2">Left Ring</span>
+  <span style="background:#fff4ad">Left Middle</span>
+  <span style="background:#d7f5d8">Index</span>
+  <span style="background:#d6eaff">Right Index</span>
+  <span style="background:#e9dcff">Right Fingers</span>
+ </div>
+ <p><small>Yellow key indicates the next key to press.</small></p>
+</div>
+
+</section>
+
+<!-- TEST -->
+<section id="test" class="page">
+<div class="card">
+ <h2>🏆 Typing Speed Test</h2>
+ <p>Select your test duration and start.</p>
+ <select id="testDuration">
+  <option value="60">1 Minute Test</option>
+  <option value="180">3 Minutes Test</option>
+  <option value="300">5 Minutes Test</option>
+ </select>
+ <button class="success" onclick="startTest()">START TEST</button>
+ <button class="secondary" onclick="showPage('practice')">Practice First</button>
+
+ <div class="exercise-info" style="margin-top:18px">
+  <div class="info-box">WPM<strong id="testWpm">0</strong></div>
+  <div class="info-box">Accuracy<strong id="testAccuracy">100%</strong></div>
+  <div class="info-box">Errors<strong id="testErrors">0</strong></div>
+  <div class="info-box">Time<strong id="testTime">00:00</strong></div>
+ </div>
+
+ <div id="testTarget" class="target">Press START TEST to begin your typing test.</div>
+ <textarea id="testInput" placeholder="Your test will start here..." disabled spellcheck="false"></textarea>
+ <div id="testResult"></div>
+</div>
+</section>
+
+<!-- WORDS -->
+<section id="words" class="page">
+<div class="card">
+ <h2>📝 Word Practice</h2>
+ <p>Choose how many words you want to practice.</p>
+ <button class="primary" onclick="startWordCount(3)">3 Words</button>
+ <button class="primary" onclick="startWordCount(5)">5 Words</button>
+ <button class="primary" onclick="startWordCount(8)">8 Words</button>
+ <button class="primary" onclick="startWordCount(20)">20 Words</button>
+ <button class="success" onclick="startWordCount(50)">50 Words</button>
+ <div id="wordPracticeInfo" class="lesson-text" style="margin-top:15px">Select a word practice level.</div>
+</div>
+</section>
+
+<!-- SENTENCES -->
+<section id="sentences" class="page">
+<div class="card">
+ <h2>💬 Sentence Practice</h2>
+ <p>Practice common English sentences.</p>
+ <button class="primary" onclick="startSentence(0)">Beginner</button>
+ <button class="primary" onclick="startSentence(1)">Intermediate</button>
+ <button class="primary" onclick="startSentence(2)">Advanced</button>
+</div>
+</section>
+
+<!-- PARAGRAPH -->
+<section id="paragraph" class="page">
+<div class="card">
+ <h2>📄 Paragraph Practice</h2>
+ <button class="primary" onclick="startParagraph(0)">Easy</button>
+ <button class="primary" onclick="startParagraph(1)">Medium</button>
+ <button class="primary" onclick="startParagraph(2)">Hard</button>
+</div>
+</section>
+
+<!-- NUMBERS -->
+<section id="numbers" class="page">
+<div class="card">
+ <h2>🔢 Number & Special Character Practice</h2>
+ <button class="primary" onclick="startSpecial(0)">Number Row</button>
+ <button class="primary" onclick="startSpecial(1)">Special Characters</button>
+ <button class="primary" onclick="startSpecial(2)">Mixed Numbers</button>
+</div>
+</section>
+
+<!-- RESULTS -->
+<section id="results" class="page">
+<div class="card">
+ <h2>📊 My Typing Results</h2>
+ <div class="stats">
+  <div class="stat">Practice<strong id="rPractice">0</strong></div>
+  <div class="stat">Best WPM<strong id="rWpm">0</strong></div>
+  <div class="stat">Best Accuracy<strong id="rAccuracy">0%</strong></div>
+  <div class="stat">Lessons<strong id="rLessons">0</strong></div>
+ </div>
+ <h3>Recent Performance</h3>
+ <div class="table-wrap">
+ <table>
+  <thead><tr><th>Date</th><th>Type</th><th>WPM</th><th>Accuracy</th></tr></thead>
+  <tbody id="resultTable"></tbody>
+ </table>
+ </div>
+ <button class="danger" onclick="clearResults()">Clear My Results</button>
+</div>
+</section>
+
+<!-- KEYBOARD GUIDE -->
+<section id="keyboard" class="page">
+<div class="card">
+ <h2>⌨️ Keyboard & Finger Guide</h2>
+ <h3>Home Row</h3>
+ <div class="lesson-text">
+  Left Little Finger: A<br>
+  Left Ring Finger: S<br>
+  Left Middle Finger: D<br>
+  Left Index Finger: F<br>
+  Right Index Finger: J<br>
+  Right Middle Finger: K<br>
+  Right Ring Finger: L<br>
+  Right Little Finger: ;<br>
+  Both Thumbs: Spacebar
+ </div>
+ <h3>Important Rules</h3>
+ <ul>
+  <li>Keep your fingers on the Home Row.</li>
+  <li>Look at the screen, not the keyboard.</li>
+  <li>Use all ten fingers.</li>
+  <li>Type slowly and accurately first.</li>
+  <li>Practice daily.</li>
+ </ul>
+ <h3>Keyboard Layout</h3>
+ <div id="guideKeyboard" class="keyboard"></div>
+</div>
+</section>
+
+<!-- SETTINGS -->
+<section id="settings" class="page">
+<div class="card">
+ <h2>⚙️ Settings</h2>
+ <label>Student Name</label><br>
+ <input id="studentName" placeholder="Enter your name">
+ <button class="primary" onclick="saveName()">Save Name</button>
+ <p id="nameMessage"></p>
+ <hr>
+ <h3>Sound Settings</h3>
+ <label><input type="checkbox" id="soundToggle" checked> Enable typing sound</label>
+ <hr>
+ <h3>Data Backup</h3>
+ <button class="primary" onclick="exportData()">Download Backup</button>
+ <label class="secondary" style="display:inline-block;padding:12px;border-radius:9px;color:white;cursor:pointer">
+ Import Backup <input type="file" id="importFile" accept=".json" hidden onchange="importData(event)">
+ </label>
+ <p><small>Progress is saved in this browser. Clearing browser data may erase it. Backup regularly.</small></p>
+</div>
+</section>
+
+</main>
+</div>
+
+<footer>
+ <h3>⌨️ FOJI TYPING MASTER PRO</h3>
+ <p>Learn Typing • Improve Speed • Build Accuracy</p>
+ <p>© 2026 FOJI TYPING MASTER PRO</p>
+</footer>
+
+<script>
+/* ================= DATA ================= */
+
+const lessons=[
+ {
+ title:"Level 1 - Keyboard Introduction",
+ desc:"Learn keyboard keys and basic finger positions.",
+ text:"asdf jkl; asdf jkl; fj fj dk dk sl sl"
+ },
+ {
+ title:"Level 2 - Home Row",
+ desc:"Practice ASDF JKL; keys.",
+ text:"asdf jkl; asdf jkl; fdsa ;lkj asdf jkl; fj dk sl a; fj dk sl"
+ },
+ {
+ title:"Level 3 - Upper Row",
+ desc:"Practice QWERTY UIOP keys.",
+ text:"qwer uiop qwer uiop ty ty we we ru ru io io qp qp"
+ },
+ {
+ title:"Level 4 - Lower Row",
+ desc:"Practice ZXCVB NM keys.",
+ text:"zxcv nm zxcv nm bnm bnm cvz cvz xcb xcb"
+ },
+ {
+ title:"Level 5 - Mix Row",
+ desc:"Combine all keyboard rows.",
+ text:"the quick brown fox jumps over the lazy dog"
+ },
+ {
+ title:"Level 6 - 3 Words Practice",
+ desc:"Type three words at a time.",
+ text:"cat dog sun book pen tree ball fish milk home"
+ },
+ {
+ title:"Level 7 - 5 Words Practice",
+ desc:"Practice five-word groups.",
+ text:"apple mango water school pencil garden mother father friend happy"
+ },
+ {
+ title:"Level 8 - 8 Words Practice",
+ desc:"Improve typing flow using eight-word groups.",
+ text:"I love to learn typing every day with practice and patience"
+ },
+ {
+ title:"Level 9 - Sentence Practice",
+ desc:"Practice complete English sentences.",
+ text:"I am learning typing. Practice makes me better. I can type with both hands."
+ },
+ {
+ title:"Level 10 - Paragraph Practice",
+ desc:"Practice continuous typing.",
+ text:"Typing is an important computer skill. It helps us write letters, documents and messages quickly. Daily practice improves speed and accuracy."
+ },
+ {
+ title:"Level 11 - Numbers & Symbols",
+ desc:"Learn numbers and special characters.",
+ text:"1234567890 !@#$%^&*() 0987654321"
+ },
+ {
+ title:"Level 12 - Advanced Practice",
+ desc:"Full keyboard professional practice.",
+ text:"Success comes through regular practice. A good typist maintains accuracy, speed, confidence and discipline."
+ }
+];
+
+const words=[
+"apple","ball","cat","dog","elephant","fish","good","home",
+"india","joy","king","lion","mother","night","orange","people",
+"queen","river","school","tree","umbrella","village","water",
+"yellow","zebra","computer","keyboard","typing","practice",
+"student","education","success","knowledge","beautiful",
+"important","professional","accuracy","development"
+];
+
+const sentenceSets=[
 [
-  "smX",
-  "smY",
-  "smZ",
-  "smRot",
-  "smScale"
+"I am a student.",
+"I love my school.",
+"My name is Rahul.",
+"I can type fast.",
+"Practice every day."
+],
+[
+"Typing is a useful computer skill.",
+"Always keep your fingers on the home row.",
+"Accuracy is more important than speed.",
+"Practice makes a person perfect.",
+"Learn something new every day."
+],
+[
+"Professional typing requires patience, concentration and regular practice.",
+"Computer skills are important for education, communication and employment.",
+"Developing good typing habits will improve your productivity and confidence."
+]
+];
 
-].forEach(id=>{
+const paragraphs=[
+"The sun rises in the east. Birds sing in the morning. We should wake up early and do our work on time. Regular practice helps us become better.",
+"Typing is an essential skill in the modern world. It helps students, teachers and professionals work efficiently. Good typing requires correct finger placement and regular practice.",
+"Success in typing does not happen in a single day. It requires patience, discipline, concentration and continuous improvement. A professional typist focuses on accuracy before increasing speed."
+];
 
-  document.getElementById(
-    id
-  ).addEventListener(
-    "input",
-    updateTransform
-  );
+const keyboardRows=[
+["`","1","2","3","4","5","6","7","8","9","0","-","=","Backspace"],
+["Tab","Q","W","E","R","T","Y","U","I","O","P","[","]","\\"],
+["Caps","A","S","D","F","G","H","J","K","L",";","'","Enter"],
+["Shift","Z","X","C","V","B","N","M",",",".","/","Shift"],
+["Ctrl","Alt","SPACE","Alt","Ctrl"]
+];
 
+let currentText="";
+let currentLesson=0;
+let startTime=0;
+let timer=null;
+let isFinished=false;
+let mode="practice";
+let testRemaining=0;
+let testStarted=false;
+let wordIndex=0;
+let soundEnabled=true;
+
+let data=JSON.parse(localStorage.getItem("fojiTypingData")||"{}");
+data.practice=data.practice||0;
+data.bestWpm=data.bestWpm||0;
+data.bestAccuracy=data.bestAccuracy||0;
+data.completed=data.completed||[];
+data.results=data.results||[];
+data.name=data.name||"";
+
+const $=id=>document.getElementById(id);
+
+function saveData(){
+ localStorage.setItem("fojiTypingData",JSON.stringify(data));
+ updateDashboard();
+}
+
+function showPage(id,button){
+ document.querySelectorAll(".page").forEach(p=>p.classList.remove("active"));
+ $(id).classList.add("active");
+ document.querySelectorAll(".menu-btn").forEach(b=>b.classList.remove("active"));
+ if(button)button.classList.add("active");
+ updateDashboard();
+ if(id==="keyboard")renderKeyboard("guideKeyboard");
+ if(id==="results")renderResults();
+}
+
+function renderSyllabus(){
+ $("syllabusGrid").innerHTML=lessons.map((l,i)=>`
+ <div class="level">
+ <span class="tag">LEVEL ${i+1}</span>
+ <h3>${l.title}</h3>
+ <p>${l.desc}</p>
+ <button onclick="startLesson(${i})">Start Practice →</button>
+ </div>`).join("");
+}
+
+function updateDashboard(){
+ $("totalPractice").textContent=data.practice;
+ $("bestWpm").textContent=data.bestWpm;
+ $("bestAccuracy").textContent=data.bestAccuracy+"%";
+ $("completedLessons").textContent=data.completed.length;
+ let percent=Math.round(data.completed.length/lessons.length*100);
+ $("courseProgress").style.width=percent+"%";
+ $("courseProgressText").textContent=percent+"% Course Completed";
+ $("rPractice").textContent=data.practice;
+ $("rWpm").textContent=data.bestWpm;
+ $("rAccuracy").textContent=data.bestAccuracy+"%";
+ $("rLessons").textContent=data.completed.length;
+}
+
+function renderKeyboard(id){
+ $(id).innerHTML=keyboardRows.map(row=>`
+ <div class="keyrow">${row.map(k=>`
+ <div class="key ${k==="SPACE"?"space":""}" data-key="${k}">${k==="SPACE"?"SPACE":k}</div>
+ `).join("")}</div>`).join("");
+}
+
+function highlightKey(char){
+ document.querySelectorAll(".key").forEach(k=>k.classList.remove("active"));
+ let value=char===" "?"SPACE":char.toUpperCase();
+ document.querySelectorAll(".key").forEach(k=>{
+ if(k.dataset.key===value)k.classList.add("active");
+ });
+}
+
+function showTarget(text,input,id){
+ let typed=input||"";
+ let html="";
+ for(let i=0;i<text.length;i++){
+ let cls="";
+ if(i<typed.length){
+ cls=typed[i]===text[i]?"done":"wrong";
+ }else if(i===typed.length){
+ cls="current";
+ }
+ let c=text[i]===" "?"&nbsp;":escapeHTML(text[i]);
+ html+=`<span class="${cls}">${c}</span>`;
+ }
+ $(id).innerHTML=html;
+ highlightKey(text[typed.length]||"");
+}
+
+function escapeHTML(s){
+ return s.replace(/[&<>"']/g,c=>({
+ "&":"&amp;","<":"&lt;",">":"&gt;",
+ '"':"&quot;","'":"&#39;"
+ })[c]);
+}
+
+function statsFor(text,typed,elapsed){
+ let correct=0,errors=0;
+ for(let i=0;i<typed.length;i++){
+ if(typed[i]===text[i])correct++;
+ else errors++;
+ }
+ let accuracy=typed.length?Math.round(correct/typed.length*100):100;
+ let minutes=Math.max(elapsed/60000,1/60);
+ let wpm=Math.round((correct/5)/minutes);
+ return {correct,errors,accuracy,wpm};
+}
+
+function startTimer(){
+ clearInterval(timer);
+ startTime=Date.now();
+ timer=setInterval(()=>{
+ updateLive();
+ },1000);
+}
+
+function updateLive(){
+ if(!startTime)return;
+ let seconds=Math.floor((Date.now()-startTime)/1000);
+ let m=Math.floor(seconds/60);
+ let s=seconds%60;
+ $("liveTime").textContent=String(m).padStart(2,"0")+":"+String(s).padStart(2,"0");
+ let result=statsFor(currentText,$("typingInput").value,seconds*1000);
+ $("liveWpm").textContent=result.wpm;
+ $("liveAccuracy").textContent=result.accuracy+"%";
+ $("liveErrors").textContent=result.errors;
+}
+
+function startLesson(index){
+ clearInterval(timer);
+ currentLesson=index;
+ mode="practice";
+ currentText=lessons[index].text;
+ isFinished=false;
+ startTime=0;
+ $("practiceTitle").textContent=lessons[index].title+" — "+lessons[index].desc;
+ $("typingInput").value="";
+ $("typingInput").disabled=false;
+ $("practiceResult").innerHTML="";
+ $("liveWpm").textContent="0";
+ $("liveAccuracy").textContent="100%";
+ $("liveErrors").textContent="0";
+ $("liveTime").textContent="00:00";
+ showTarget(currentText,"","targetText");
+ renderKeyboard("virtualKeyboard");
+ showPage("practice");
+ $("typingInput").focus();
+}
+
+function resetPractice(){
+ if(mode!=="practice")return;
+ startLesson(currentLesson);
+}
+
+function finishPractice(){
+ if(!currentText||isFinished)return;
+ isFinished=true;
+ clearInterval(timer);
+ let elapsed=startTime?Date.now()-startTime:0;
+ let result=statsFor(currentText,$("typingInput").value,elapsed);
+ saveResult(result,"Practice");
+ data.practice++;
+ if(mode==="practice" && $("typingInput").value.length>=currentText.length){
+ if(!data.completed.includes(currentLesson))data.completed.push(currentLesson);
+ }
+ saveData();
+ $("typingInput").disabled=true;
+ $("practiceResult").innerHTML=`
+ <div class="result-box">
+ <h3>🎉 Practice Completed!</h3>
+ <p>Typing Speed: <strong>${result.wpm} WPM</strong></p>
+ <p>Accuracy: <strong>${result.accuracy}%</strong></p>
+ <p>Correct Characters: ${result.correct}</p>
+ <p>Errors: ${result.errors}</p>
+ </div>`;
+}
+
+function nextLesson(){
+ let next=(currentLesson+1)%lessons.length;
+ startLesson(next);
+}
+
+$("typingInput").addEventListener("input",()=>{
+ if(isFinished)return;
+ if(!startTime)startTimer();
+ let typed=$("typingInput").value;
+ showTarget(currentText,typed,"targetText");
+ updateLive();
+ if(soundEnabled && typed.length>0){
+ // Typing sound is optional; no external audio is required.
+ }
+ if(typed.length>=currentText.length){
+ finishPractice();
+ }
 });
 
+/* WORD PRACTICE */
 
-/* ---------------------------------------------------------
-   CHARACTER BUTTONS
-   --------------------------------------------------------- */
+function startWordCount(count){
+ let selected=[];
+ for(let i=0;i<count;i++){
+ selected.push(words[Math.floor(Math.random()*words.length)]);
+ }
+ currentText=selected.join(" ");
+ currentLesson=5;
+ mode="practice";
+ isFinished=false;
+ startTime=0;
+ $("practiceTitle").textContent=count+" Words Practice";
+ $("typingInput").value="";
+ $("typingInput").disabled=false;
+ $("practiceResult").innerHTML="";
+ $("wordPracticeInfo").textContent="Your "+count+" words exercise is ready.";
+ $("liveTime").textContent="00:00";
+ showTarget(currentText,"","targetText");
+ renderKeyboard("virtualKeyboard");
+ showPage("practice");
+ $("typingInput").focus();
+}
 
-document.querySelectorAll(
-  ".sm-character-btn"
-).forEach(button=>{
+/* SENTENCES */
 
-  button.addEventListener(
-    "click",
-    ()=>{
+function startSentence(level){
+ currentText=sentenceSets[level].join(" ");
+ currentLesson=8;
+ mode="practice";
+ isFinished=false;
+ startTime=0;
+ $("practiceTitle").textContent=["Beginner","Intermediate","Advanced"][level]+" Sentence Practice";
+ $("typingInput").value="";
+ $("typingInput").disabled=false;
+ $("practiceResult").innerHTML="";
+ showTarget(currentText,"","targetText");
+ renderKeyboard("virtualKeyboard");
+ showPage("practice");
+ $("typingInput").focus();
+}
 
-      loadCharacter(
-        button.dataset.smCharacter
-      );
+/* PARAGRAPH */
 
-    }
-  );
+function startParagraph(level){
+ currentText=paragraphs[level];
+ currentLesson=9;
+ mode="practice";
+ isFinished=false;
+ startTime=0;
+ $("practiceTitle").textContent=["Easy","Medium","Hard"][level]+" Paragraph Practice";
+ $("typingInput").value="";
+ $("typingInput").disabled=false;
+ $("practiceResult").innerHTML="";
+ showTarget(currentText,"","targetText");
+ renderKeyboard("virtualKeyboard");
+ showPage("practice");
+ $("typingInput").focus();
+}
 
+/* NUMBER AND SYMBOL */
+
+function startSpecial(level){
+ const texts=[
+ "1234567890 0987654321 1122334455 6677889900",
+ "! @ # $ % ^ & * ( ) _ + - = { } [ ] ; : ' \" , . / ?",
+ "abc123 xyz456 typing789 master2026 # @ ! 98765"
+ ];
+ currentText=texts[level];
+ currentLesson=10;
+ mode="practice";
+ isFinished=false;
+ startTime=0;
+ $("practiceTitle").textContent=["Number Row","Special Characters","Mixed Numbers"][level]+" Practice";
+ $("typingInput").value="";
+ $("typingInput").disabled=false;
+ $("practiceResult").innerHTML="";
+ showTarget(currentText,"","targetText");
+ renderKeyboard("virtualKeyboard");
+ showPage("practice");
+ $("typingInput").focus();
+}
+
+/* TEST */
+
+const testParagraphs=[
+"Typing is a valuable skill for everyone. A good typist can work faster and complete tasks with confidence. Practice daily and improve your keyboard skills. Accuracy should always come before speed. Keep your fingers in the correct position and look at the screen while typing.",
+"Computers have become an important part of our daily lives. Students use computers for learning and research. Office workers use computers to prepare documents and reports. Good typing skills save time and increase productivity. Regular practice helps develop speed and accuracy.",
+"Success requires hard work, discipline and patience. Learning a new skill takes time, but daily practice makes the process easier. A professional typist uses all ten fingers and maintains a comfortable posture. Always focus on accuracy before increasing typing speed."
+];
+
+function startTest(){
+ clearInterval(timer);
+ mode="test";
+ testRemaining=parseInt($("testDuration").value);
+ testStarted=true;
+ isFinished=false;
+ currentText="";
+ $("testInput").value="";
+ $("testInput").disabled=false;
+ $("testResult").innerHTML="";
+ $("testWpm").textContent="0";
+ $("testAccuracy").textContent="100%";
+ $("testErrors").textContent="0";
+ updateTestTime();
+ nextTestText();
+ $("testInput").focus();
+ startTestTimer();
+}
+
+function nextTestText(){
+ currentText=testParagraphs[Math.floor(Math.random()*testParagraphs.length)];
+ showTarget(currentText,"","testTarget");
+}
+
+function startTestTimer(){
+ clearInterval(timer);
+ timer=setInterval(()=>{
+ if(!testStarted)return;
+ testRemaining--;
+ updateTestTime();
+ updateTestStats();
+ if(testRemaining<=0)finishTest();
+ },1000);
+}
+
+function updateTestTime(){
+ let m=Math.floor(Math.max(0,testRemaining)/60);
+ let s=Math.max(0,testRemaining)%60;
+ $("testTime").textContent=String(m).padStart(2,"0")+":"+String(s).padStart(2,"0");
+}
+
+function updateTestStats(){
+ let elapsed=(parseInt($("testDuration").value)-testRemaining)*1000;
+ let result=statsFor(currentText,$("testInput").value,elapsed);
+ $("testWpm").textContent=result.wpm;
+ $("testAccuracy").textContent=result.accuracy+"%";
+ $("testErrors").textContent=result.errors;
+}
+
+$("testInput").addEventListener("input",()=>{
+ if(!testStarted||isFinished)return;
+ showTarget(currentText,$("testInput").value,"testTarget");
+ updateTestStats();
+ if($("testInput").value.length>=currentText.length){
+ $("testInput").value="";
+ nextTestText();
+ }
 });
 
-
-/* ---------------------------------------------------------
-   ANIMATION SELECT
-   --------------------------------------------------------- */
-
-animationSelect.addEventListener(
-  "change",
-  ()=>{
-
-    if(!mixer){
-
-      return;
-
-    }
-
-
-    Object.values(
-      actions
-    ).forEach(
-      action=>action.stop()
-    );
-
-
-    const name =
-      animationSelect.value;
-
-
-    if(!name){
-
-      currentAction =
-        null;
-
-      return;
-
-    }
-
-
-    currentAction =
-      actions[name];
-
-
-    if(currentAction){
-
-      currentAction.reset();
-
-      currentAction.play();
-
-    }
-
-  }
-);
-
-
-/* ---------------------------------------------------------
-   PLAY
-   --------------------------------------------------------- */
-
-document.getElementById(
-  "smPlay"
-).addEventListener(
-  "click",
-  ()=>{
-
-    if(currentAction){
-
-      currentAction.paused =
-        false;
-
-      currentAction.play();
-
-    }
-
-  }
-);
-
-
-/* ---------------------------------------------------------
-   PAUSE
-   --------------------------------------------------------- */
-
-document.getElementById(
-  "smPause"
-).addEventListener(
-  "click",
-  ()=>{
-
-    if(currentAction){
-
-      currentAction.paused =
-        true;
-
-    }
-
-  }
-);
-
-
-/* ---------------------------------------------------------
-   STOP
-   --------------------------------------------------------- */
-
-document.getElementById(
-  "smStop"
-).addEventListener(
-  "click",
-  ()=>{
-
-    if(currentAction){
-
-      currentAction.stop();
-
-    }
-
-  }
-);
-
-
-/* ---------------------------------------------------------
-   RESET
-   --------------------------------------------------------- */
-
-document.getElementById(
-  "smReset"
-).addEventListener(
-  "click",
-  ()=>{
-
-    if(!currentModel){
-
-      return;
-
-    }
-
-
-    currentModel.position.set(
-      0,
-      0,
-      0
-    );
-
-
-    currentModel.rotation.set(
-      0,
-      0,
-      0
-    );
-
-
-    currentModel.scale.set(
-      1,
-      1,
-      1
-    );
-
-
-    updateInputs();
-
-  }
-);
-
-
-/* ---------------------------------------------------------
-   CAMERA
-   --------------------------------------------------------- */
-
-function cameraFront(){
-
-  if(!currentModel){
-
-    return;
-
-  }
-
-
-  const box =
-    new THREE.Box3()
-      .setFromObject(
-        currentModel
-      );
-
-
-  const center =
-    box.getCenter(
-      new THREE.Vector3()
-    );
-
-
-  const size =
-    box.getSize(
-      new THREE.Vector3()
-    );
-
-
-  const distance =
-    Math.max(
-      size.x,
-      size.y,
-      size.z
-    ) * 2.5;
-
-
-  camera.position.set(
-    center.x,
-    center.y +
-    size.y * .25,
-    center.z +
-    distance
-  );
-
-
-  controls.target.copy(
-    center
-  );
-
-
-  controls.update();
-
+function finishTest(){
+ if(isFinished)return;
+ isFinished=true;
+ testStarted=false;
+ clearInterval(timer);
+ $("testInput").disabled=true;
+ let elapsed=(parseInt($("testDuration").value)-testRemaining)*1000;
+ let typed=$("testInput").value;
+ let result=statsFor(currentText,typed,elapsed);
+ data.practice++;
+ saveResult(result,"Test");
+ saveData();
+ $("testResult").innerHTML=`
+ <div class="result-box">
+ <h3>🏆 TEST COMPLETED!</h3>
+ <p>Speed: <strong>${result.wpm} WPM</strong></p>
+ <p>Accuracy: <strong>${result.accuracy}%</strong></p>
+ <p>Correct Characters: ${result.correct}</p>
+ <p>Errors: ${result.errors}</p>
+ <button class="primary" onclick="startTest()">Try Again</button>
+ </div>`;
 }
 
+/* RESULTS */
 
-function cameraSide(){
-
-  if(!currentModel){
-
-    return;
-
-  }
-
-
-  const box =
-    new THREE.Box3()
-      .setFromObject(
-        currentModel
-      );
-
-
-  const center =
-    box.getCenter(
-      new THREE.Vector3()
-    );
-
-
-  const size =
-    box.getSize(
-      new THREE.Vector3()
-    );
-
-
-  const distance =
-    Math.max(
-      size.x,
-      size.y,
-      size.z
-    ) * 2.5;
-
-
-  camera.position.set(
-    center.x +
-    distance,
-    center.y +
-    size.y * .25,
-    center.z
-  );
-
-
-  controls.target.copy(
-    center
-  );
-
-
-  controls.update();
-
+function saveResult(r,type){
+ data.bestWpm=Math.max(data.bestWpm,r.wpm);
+ data.bestAccuracy=Math.max(data.bestAccuracy,r.accuracy);
+ data.results.unshift({
+ date:new Date().toLocaleString(),
+ type:type,
+ wpm:r.wpm,
+ accuracy:r.accuracy
+ });
+ data.results=data.results.slice(0,100);
 }
 
-
-function cameraTop(){
-
-  if(!currentModel){
-
-    return;
-
-  }
-
-
-  const box =
-    new THREE.Box3()
-      .setFromObject(
-        currentModel
-      );
-
-
-  const center =
-    box.getCenter(
-      new THREE.Vector3()
-    );
-
-
-  const size =
-    box.getSize(
-      new THREE.Vector3()
-    );
-
-
-  const distance =
-    Math.max(
-      size.x,
-      size.y,
-      size.z
-    ) * 3;
-
-
-  camera.position.set(
-    center.x,
-    center.y +
-    distance,
-    center.z +
-    .01
-  );
-
-
-  controls.target.copy(
-    center
-  );
-
-
-  controls.update();
-
+function renderResults(){
+ $("resultTable").innerHTML=data.results.length?
+ data.results.map(r=>`
+ <tr>
+ <td>${escapeHTML(r.date)}</td>
+ <td>${escapeHTML(r.type)}</td>
+ <td>${r.wpm}</td>
+ <td>${r.accuracy}%</td>
+ </tr>`).join("") :
+ "<tr><td colspan='4'>No results yet. Start practicing!</td></tr>";
+ updateDashboard();
 }
 
-
-function cameraReset(){
-
-  camera.position.set(
-    3,
-    2,
-    5
-  );
-
-
-  controls.target.set(
-    0,
-    1,
-    0
-  );
-
-
-  controls.update();
-
+function clearResults(){
+ if(!confirm("Are you sure you want to clear all results?"))return;
+ data.practice=0;
+ data.bestWpm=0;
+ data.bestAccuracy=0;
+ data.completed=[];
+ data.results=[];
+ saveData();
+ renderResults();
 }
 
+/* SETTINGS */
 
-document.getElementById(
-  "smFront"
-).addEventListener(
-  "click",
-  cameraFront
-);
-
-
-document.getElementById(
-  "smSide"
-).addEventListener(
-  "click",
-  cameraSide
-);
-
-
-document.getElementById(
-  "smTop"
-).addEventListener(
-  "click",
-  cameraTop
-);
-
-
-document.getElementById(
-  "smCameraReset"
-).addEventListener(
-  "click",
-  cameraReset
-);
-
-
-/* ---------------------------------------------------------
-   BACKGROUND
-   --------------------------------------------------------- */
-
-document.getElementById(
-  "smBackground"
-).addEventListener(
-  "change",
-  event=>{
-
-    const value =
-      event.target.value;
-
-
-    if(value === "dark"){
-
-      scene.background =
-        new THREE.Color(
-          0x050914
-        );
-
-    }
-
-
-    if(value === "blue"){
-
-      scene.background =
-        new THREE.Color(
-          0x12345b
-        );
-
-    }
-
-
-    if(value === "forest"){
-
-      scene.background =
-        new THREE.Color(
-          0x123c2c
-        );
-
-    }
-
-
-    if(value === "sunset"){
-
-      scene.background =
-        new THREE.Color(
-          0x58351f
-        );
-
-    }
-
-
-    if(value === "white"){
-
-      scene.background =
-        new THREE.Color(
-          0xe8e8e8
-        );
-
-    }
-
-  }
-);
-
-
-/* ---------------------------------------------------------
-   RESIZE
-   --------------------------------------------------------- */
-
-function resize(){
-
-  const width =
-    canvas.clientWidth;
-
-  const height =
-    canvas.clientHeight;
-
-
-  if(!width || !height){
-
-    return;
-
-  }
-
-
-  camera.aspect =
-    width / height;
-
-  camera.updateProjectionMatrix();
-
-
-  renderer.setSize(
-    width,
-    height,
-    false
-  );
-
+function saveName(){
+ data.name=$("studentName").value.trim();
+ saveData();
+ $("nameMessage").textContent="Student name saved successfully!";
 }
 
-
-window.addEventListener(
-  "resize",
-  resize
-);
-
-
-/* ---------------------------------------------------------
-   RENDER LOOP
-   --------------------------------------------------------- */
-
-function animate(){
-
-  requestAnimationFrame(
-    animate
-  );
-
-
-  const delta =
-    clock.getDelta();
-
-
-  if(mixer){
-
-    mixer.update(
-      delta
-    );
-
-  }
-
-
-  controls.update();
-
-
-  renderer.render(
-    scene,
-    camera
-  );
-
+function exportData(){
+ let blob=new Blob([JSON.stringify(data,null,2)],{type:"application/json"});
+ let url=URL.createObjectURL(blob);
+ let a=document.createElement("a");
+ a.href=url;
+ a.download="foji-typing-backup.json";
+ a.click();
+ URL.revokeObjectURL(url);
 }
 
+function importData(event){
+ let file=event.target.files[0];
+ if(!file)return;
+ let reader=new FileReader();
+ reader.onload=()=>{
+ try{
+ let imported=JSON.parse(reader.result);
+ if(!imported||!Array.isArray(imported.results)||!Array.isArray(imported.completed))throw Error();
+ data=imported;
+ saveData();
+ alert("Backup imported successfully!");
+ }catch(e){
+ alert("Invalid backup file.");
+ }
+ };
+ reader.readAsText(file);
+}
 
-/* ---------------------------------------------------------
-   START
-   --------------------------------------------------------- */
+$("soundToggle").addEventListener("change",e=>{
+ soundEnabled=e.target.checked;
+});
 
-resize();
+/* INITIALIZE */
 
-animate();
-
-loadCharacter(
-  "king"
-);
-
-
-/* PUBLIC API */
-
-window.STORY_MAKER_PRO = {
-
-  loadCharacter,
-
-  getCurrentModel(){
-
-    return currentModel;
-
-  },
-
-  getCharacters(){
-
-    return SM_CHARACTERS;
-
-  }
-
-};
+renderSyllabus();
+renderKeyboard("guideKeyboard");
+updateDashboard();
+$("studentName").value=data.name||"";
+renderResults();
 
 </script>
 </body>
